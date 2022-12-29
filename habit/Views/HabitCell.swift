@@ -25,7 +25,7 @@ class HabitCell: UICollectionViewCell {
     func configureUIwithData() {
         name.text = habitData?.name
         goalTitle.text = habitData?.goalTitle
-        percent.text = getPercent()
+        percent.text = habitData?.percentStr
         
         
         
@@ -37,20 +37,7 @@ class HabitCell: UICollectionViewCell {
 //        backgoundView.backgroundColor = color.backgoundColor
     }
     
-    func getPercent() -> String {
-        
-        let prefix = "%"
-        
-        guard let acheiveCount = habitData?.acheiveCount else {return "0\(prefix)"}
-        guard let goalCount = habitData?.goalCount else {return "0\(prefix)"}
-        
-        var percent = "\(Int(acheiveCount / goalCount) * 100)%"
-        
-        
-        return percent
-        
-        
-    }
+
 
     
 }

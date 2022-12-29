@@ -27,6 +27,8 @@ final class CoreDataManager {
     
     // MARK: - [Read] 코어데이터에 저장된 데이터 모두 읽어오기
     func getHabitList() -> [Habit] {
+
+        
         var habits: [Habit] = []
         // 임시저장소 있는지 확인
         if let context = context {
@@ -45,6 +47,8 @@ final class CoreDataManager {
                 print("가져오는 것 실패")
             }
         }
+        
+        
         
         return habits
     }
