@@ -14,6 +14,10 @@
 		6055BD41295D327000EC4791 /* habit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD3F295D327000EC4791 /* habit.xcdatamodeld */; };
 		6055BD43295D327200EC4791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6055BD42295D327200EC4791 /* Assets.xcassets */; };
 		6055BD46295D327200EC4791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6055BD44295D327200EC4791 /* LaunchScreen.storyboard */; };
+		6055BD56295D4B3F00EC4791 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD54295D4B3F00EC4791 /* Habit+CoreDataClass.swift */; };
+		6055BD57295D4B3F00EC4791 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD55295D4B3F00EC4791 /* Habit+CoreDataProperties.swift */; };
+		6055BD59295D4BD900EC4791 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD58295D4BD900EC4791 /* CoreDataManager.swift */; };
+		6055BD5D295D514000EC4791 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD5C295D514000EC4791 /* HabitCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		6055BD42295D327200EC4791 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6055BD45295D327200EC4791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6055BD47295D327200EC4791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6055BD54295D4B3F00EC4791 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6055BD55295D4B3F00EC4791 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6055BD58295D4BD900EC4791 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6055BD5C295D514000EC4791 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +68,10 @@
 			children = (
 				6055BD36295D327000EC4791 /* AppDelegate.swift */,
 				6055BD38295D327000EC4791 /* SceneDelegate.swift */,
-				6055BD3A295D327000EC4791 /* ViewController.swift */,
+				6055BD50295D393500EC4791 /* Helpers */,
+				6055BD4F295D392B00EC4791 /* Views */,
+				6055BD4E295D392500EC4791 /* Models */,
+				6055BD4D295D391D00EC4791 /* Controllers */,
 				6055BD3C295D327000EC4791 /* Main.storyboard */,
 				6055BD42295D327200EC4791 /* Assets.xcassets */,
 				6055BD44295D327200EC4791 /* LaunchScreen.storyboard */,
@@ -68,6 +79,39 @@
 				6055BD3F295D327000EC4791 /* habit.xcdatamodeld */,
 			);
 			path = habit;
+			sourceTree = "<group>";
+		};
+		6055BD4D295D391D00EC4791 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6055BD3A295D327000EC4791 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6055BD4E295D392500EC4791 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6055BD54295D4B3F00EC4791 /* Habit+CoreDataClass.swift */,
+				6055BD55295D4B3F00EC4791 /* Habit+CoreDataProperties.swift */,
+				6055BD58295D4BD900EC4791 /* CoreDataManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6055BD4F295D392B00EC4791 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6055BD5C295D514000EC4791 /* HabitCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6055BD50295D393500EC4791 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +187,12 @@
 			files = (
 				6055BD3B295D327000EC4791 /* ViewController.swift in Sources */,
 				6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */,
+				6055BD5D295D514000EC4791 /* HabitCell.swift in Sources */,
 				6055BD41295D327000EC4791 /* habit.xcdatamodeld in Sources */,
 				6055BD39295D327000EC4791 /* SceneDelegate.swift in Sources */,
+				6055BD57295D4B3F00EC4791 /* Habit+CoreDataProperties.swift in Sources */,
+				6055BD59295D4BD900EC4791 /* CoreDataManager.swift in Sources */,
+				6055BD56295D4B3F00EC4791 /* Habit+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
