@@ -22,19 +22,20 @@ class RegisterViewController: UIViewController {
     // (나중에 어떤 색상이 선택되어 있는지 쉽게 파악하기 위해)
     var temporaryNum: Int64? = 1
     
-    var habitData: Habit? {
-        didSet {
-            temporaryNum = habitData?.color
-        }
-    }
+//    var habitData: Habit? {
+//        didSet {
+//            temporaryNum = habitData?.color
+//        }
+//    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-
         
     }
+    
+
     
     func setup() {
         
@@ -47,6 +48,7 @@ class RegisterViewController: UIViewController {
         // 버튼
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 8
+        registerButton.setTitle("잔디 등록하기", for: .normal)
         
 //        mainTextView.delegate = self
         
@@ -60,30 +62,15 @@ class RegisterViewController: UIViewController {
 
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         
-        // 기존데이터가 있을때 ===> 기존 데이터 업데이트
-        if let habitData = self.habitData {
-            // 텍스트뷰에 저장되어 있는 메세지
-            habitData.name = nameTextField.text
-            habitData.goalTitle = goalTextField.text
+        coreDataManager.saveData(name: nameTextField.text,
+                                 goalTitle: goalTextField.text,
+                                 goalCount: 30,
+                                 color: 1,
+                                 achieveCount: 0) {
+            print("저장완료")
+            // 다시 전화면으로 돌아가기
+            self.navigationController?.popViewController(animated: true)
             
-            habitData.color = temporaryNum ?? 1
-            coreDataManager.updateData(newData: habitData, completion: {
-                print("업데이트 완료")
-                // 다시 전화면으로 돌아가기
-                self.navigationController?.popViewController(animated: true)
-            })
-            
-        // 기존데이터가 없을때 ===> 새로운 데이터 생성
-        } else {
-            coreDataManager.saveData(name: nameTextField.text,
-                                     goalTitle: goalTextField.text,
-                                     goalCount: 30,
-                                     color: 1,
-                                     achieveCount: 0) {
-                print("저장완료")
-                // 다시 전화면으로 돌아가기
-                self.navigationController?.popViewController(animated: true)
-            }
             }
         }
     

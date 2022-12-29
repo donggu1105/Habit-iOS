@@ -87,6 +87,14 @@ extension ViewController:UICollectionViewDelegate {
         performSegue(withIdentifier: "detail", sender: indexPath)
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail" {
+            let detailVC = segue.destination as! DetailViewController
+            
+            guard let indexPath = sender as? IndexPath else { return }
+            detailVC.habitData = coreDataManager.getHabitList()[indexPath.row]
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionFooter {
@@ -96,6 +104,7 @@ extension ViewController:UICollectionViewDelegate {
             return UICollectionReusableView()
         }
     }
+    
     
 }
 
