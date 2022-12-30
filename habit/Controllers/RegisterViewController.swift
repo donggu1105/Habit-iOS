@@ -15,7 +15,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var goalTextField: UITextField!
     
     @IBOutlet weak var registerButton: UIButton!
-    
     let coreDataManager = CoreDataManager.shared
     
     // ToDo 색깔 구분을 위해 임시적으로 숫자저장하는 변수
@@ -34,7 +33,7 @@ class RegisterViewController: UIViewController {
         setup()
         
     }
-    
+
 
     
     func setup() {
@@ -48,7 +47,7 @@ class RegisterViewController: UIViewController {
         // 버튼
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 8
-        registerButton.setTitle("잔디 등록하기", for: .normal)
+        
         
 //        mainTextView.delegate = self
         
@@ -59,9 +58,9 @@ class RegisterViewController: UIViewController {
 //        saveButton.layer.cornerRadius = 8
 //        clearButtonColors()
     }
-
+    
+    
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        
         coreDataManager.saveData(name: nameTextField.text,
                                  goalTitle: goalTextField.text,
                                  goalCount: 30,
@@ -69,11 +68,20 @@ class RegisterViewController: UIViewController {
                                  achieveCount: 0) {
             print("저장완료")
             // 다시 전화면으로 돌아가기
-            self.navigationController?.popViewController(animated: true)
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: .main)
+            
+            guard let mainVC = mainStoryboard
+                .instantiateViewController(withIdentifier: "ViewController") as? ViewController else { return }
+            
+            self.present(mainVC, animated: true)
             
             }
-        }
-    
+        
+        
+    }
+
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }

@@ -44,7 +44,9 @@ class ViewController: UIViewController {
 //         네비게이션바 우측에 Plus 버튼 만들기
         let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
         plusButton.tintColor = .black
-        navigationItem.rightBarButtonItem = plusButton
+        self.navigationItem.rightBarButtonItem = plusButton
+        
+    
     }
     
     func setupCollectionView() {
@@ -54,7 +56,12 @@ class ViewController: UIViewController {
     }
     
     @objc func plusButtonTapped() {
-        performSegue(withIdentifier: "register", sender: nil)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: .main)
+        
+        guard let registerVC = mainStoryboard
+            .instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController else { return }
+        
+        self.present(registerVC, animated: true)
     }
 
 
@@ -72,11 +79,13 @@ extension ViewController: UICollectionViewDataSource {
     }
     //컬렉션뷰의 지정된 위치에 표시할 셀을 요청하는 메서드.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HabitCell", for: indexPath) as! HabitCell
+        
+        let cellId = String(describing: HabitCell.self)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HabitCell
         
         // 셀에 모델(ToDoData) 전달
         let habitData = coreDataManager.getHabitList()
-        cell.habitData = habitData[indexPath.row]
+        cell.habitData = habitData[indexPath.item]
         return cell
     }
 }
@@ -84,17 +93,22 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController:UICollectionViewDelegate {
     //지정된 셀이 선택되었음을 알리는 메서드.
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detail", sender: indexPath)
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: .main)
+        
+        guard let detailVC = mainStoryboard
+            .instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        
+        let habitData = coreDataManager.getHabitList()[indexPath.item]
+        
+        print(habitData)
+        
+        detailVC.name = habitData.name
+        detailVC.goalTitle = habitData.goalTitle
+        
+        self.present(detailVC, animated: true)
+    }
 
-    }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detail" {
-            let detailVC = segue.destination as! DetailViewController
-            
-            guard let indexPath = sender as? IndexPath else { return }
-            detailVC.habitData = coreDataManager.getHabitList()[indexPath.row]
-        }
-    }
+    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionFooter {

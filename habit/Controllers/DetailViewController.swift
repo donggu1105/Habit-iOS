@@ -14,30 +14,32 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var golaTextField: UITextField!
     @IBOutlet weak var acheiveButton: UIButton!
-    
-    var habitData: Habit?
-    
     @IBOutlet weak var animatedCountingLabel: UILabel!
     var circularProgressBarView: CircularProgressBarView!
     var circularViewDuration: TimeInterval = 2
     
+    var name: String? {
+        didSet {
+            nameTextField.text = name
+        }
+    }
     
+    var goalTitle: String? {
+        didSet {
+            golaTextField.text = goalTitle
+        }
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .yellow
         
         setUp()
-//        setUpNavi()
-        
-        
         setUpCircularProgressBarView()
     }
     
     func setUp() {
-        // 잔디 이름
-        nameTextField.text = habitData?.name
-        // 목표
-        golaTextField.text = habitData?.goalTitle
         // 버튼
         acheiveButton.clipsToBounds = true
         acheiveButton.layer.cornerRadius = 8
