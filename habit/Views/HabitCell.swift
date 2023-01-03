@@ -7,34 +7,24 @@
 
 import UIKit
 
-class HabitCell: UICollectionViewCell {
+class HabitCell: UITableViewCell {
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var goalTitleLabel: UILabel!
+    @IBOutlet weak var percentLabel: UILabel!
     
-    @IBOutlet weak var name: UILabel!
-    
-    @IBOutlet weak var goalTitle: UILabel!
-    
-    @IBOutlet weak var percent: UILabel!
-    
-    var habitData: Habit? {
+    var data: Habit? {
         didSet {
             configureUIwithData()
         }
     }
     
+    
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
-        name.text = habitData?.name
-        goalTitle.text = habitData?.goalTitle
-        percent.text = habitData?.percentStr
-        
-        
-        
-//        toDoTextLabel.text = toDoData?.memoText
-//        dateTextLabel.text = toDoData?.dateString
-//        guard let colorNum = toDoData?.color else { return }
-//        let color = MyColor(rawValue: colorNum) ?? .red
-//        updateButton.backgroundColor = color.buttonColor
-//        backgoundView.backgroundColor = color.backgoundColor
+        nameLabel.text = data?.name
+        goalTitleLabel.text = data?.goalTitle
+        percentLabel.text = data?.percentStr
     }
     
 

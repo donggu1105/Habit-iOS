@@ -68,14 +68,7 @@ class RegisterViewController: UIViewController {
                                  achieveCount: 0) {
             print("저장완료")
             // 다시 전화면으로 돌아가기
-            
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: .main)
-            
-            guard let mainVC = mainStoryboard
-                .instantiateViewController(withIdentifier: "ViewController") as? ViewController else { return }
-            
-            self.present(mainVC, animated: true)
-            
+            self.navigationController?.popViewController(animated: true)
             }
         
         

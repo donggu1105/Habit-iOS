@@ -14,29 +14,24 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var golaTextField: UITextField!
     @IBOutlet weak var acheiveButton: UIButton!
-    @IBOutlet weak var animatedCountingLabel: UILabel!
-    var circularProgressBarView: CircularProgressBarView!
-    var circularViewDuration: TimeInterval = 2
     
-    var name: String? {
-        didSet {
-            nameTextField.text = name
-        }
-    }
-    
-    var goalTitle: String? {
-        didSet {
-            golaTextField.text = goalTitle
-        }
-    }
+    var habitData: Habit?
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .yellow
+        self.view.backgroundColor = .gray
         
+        //      네비게이션바 우측에 Plus 버튼 만들기
+                let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+                plusButton.tintColor = .black
+                navigationItem.rightBarButtonItem = plusButton
         setUp()
-        setUpCircularProgressBarView()
+    }
+    
+    @objc func plusButtonTapped() {
+        
     }
     
     func setUp() {
@@ -44,32 +39,16 @@ class DetailViewController: UIViewController {
         acheiveButton.clipsToBounds = true
         acheiveButton.layer.cornerRadius = 8
         acheiveButton.setTitle("잔디 심기", for: .normal)
+        
+        
+        nameTextField.backgroundColor = .clear
+        golaTextField.backgroundColor = .clear
+        nameTextField.text = habitData?.name
+        golaTextField.text = habitData?.goalTitle
 
         
     }
-    
-//    func setUpNavi() {
-//        self.title = "잔디 상세 보기"
-//        let menuButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(plusButtonTapped))
-//        menuButton.tintColor = .black
-//        navigationItem.rightBarButtonItem = menuButton
-//    }
-//
-//    @objc func plusButtonTapped() {
-//        print(#function)
-//    }
-    
-    func setUpCircularProgressBarView() {
-        // set view
-        circularProgressBarView = CircularProgressBarView(frame: .zero)
-        // align to the center of the screen
-        circularProgressBarView.center = view.center
-        // call the animation with circularViewDuration
-        circularProgressBarView.progressAnimation(duration: circularViewDuration)
-        // add this view to the view controller
-        view.addSubview(circularProgressBarView)
-    }
-    
+ 
     @IBAction func acheiveButtonTapped(_ sender: UIButton) {
     }
     
@@ -77,16 +56,5 @@ class DetailViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
