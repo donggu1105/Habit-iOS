@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     }
     
     func setupTableView() {
+ 
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .red

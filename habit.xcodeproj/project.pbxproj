@@ -22,6 +22,7 @@
 		6055BD67295D7E9700EC4791 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD65295D7E9700EC4791 /* Habit+CoreDataProperties.swift */; };
 		6098CC5E2963F09B0077D828 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098CC5D2963F09B0077D828 /* MyColor.swift */; };
 		6098CC602963F0AB0077D828 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098CC5F2963F0AB0077D828 /* UIColor+Extension.swift */; };
+		6098CC622963F6A30077D828 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098CC612963F6A30077D828 /* CircularProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		6055BD65295D7E9700EC4791 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataProperties.swift"; path = "../../Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6098CC5D2963F09B0077D828 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		6098CC5F2963F0AB0077D828 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		6098CC612963F6A30077D828 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				6055BD5C295D514000EC4791 /* HabitCell.swift */,
+				6098CC612963F6A30077D828 /* CircularProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				6055BD39295D327000EC4791 /* SceneDelegate.swift in Sources */,
 				6055BD67295D7E9700EC4791 /* Habit+CoreDataProperties.swift in Sources */,
 				6055BD61295D6F4700EC4791 /* RegisterViewController.swift in Sources */,
+				6098CC622963F6A30077D828 /* CircularProgressView.swift in Sources */,
 				6055BD59295D4BD900EC4791 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
