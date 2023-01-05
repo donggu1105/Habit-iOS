@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = .gray
         
         //      네비게이션바 우측에 Plus 버튼 만들기

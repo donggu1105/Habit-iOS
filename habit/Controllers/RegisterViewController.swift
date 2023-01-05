@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
 
     
     func setup() {
-        
+        self.title = "새로운 잔디"
         // 잔디 이름
         nameTextField.delegate = self
         nameTextField.placeholder = "잔디 이름"

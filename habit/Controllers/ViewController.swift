@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import JJFloatingActionButton
 
 class ViewController: UIViewController {
 
@@ -28,10 +29,27 @@ class ViewController: UIViewController {
         // 네비게이션 셋업
         setupNaviBar()
         setupTableView()
+        setUpFloatingButton()
+    }
+    
+    func setUpFloatingButton() {
+        let actionButton = JJFloatingActionButton()
+
+        actionButton.addItem(title: "잔디 등록하기", image: UIImage(systemName: "pencil.tip.crop.circle.badge.plus")?.withRenderingMode(.alwaysTemplate)) { item in
+            self.performSegue(withIdentifier: "register", sender: nil)
+            
+        }
+
+//        actionButton.addItem(title: "item 2", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
+//           do something
+//        }
+
+        // last 4 lines can be replaced with
+         actionButton.display(inViewController: self)
     }
     
     func setupTableView() {
- 
+            
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = .red
@@ -49,9 +67,9 @@ class ViewController: UIViewController {
 //        navigationItem.largeTitleDisplayMode = .never
 
 //      네비게이션바 우측에 Plus 버튼 만들기
-        let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
-        plusButton.tintColor = .black
-        self.navigationItem.rightBarButtonItem = plusButton
+//        let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
+//        plusButton.tintColor = .black
+//        self.navigationItem.rightBarButtonItem = plusButton
         
     }
     
@@ -83,6 +101,26 @@ extension ViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
+    
+    // 테이블 지우기
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, complete in
+                let habit = self.coreDataManager.getHabitList()[indexPath.row]
+                self.coreDataManager.deleteData(data: habit) {
+                    print("삭제완료")
+                }
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                complete(true)
+            }
+            
+            // here set your image and background color
+            deleteAction.image = UIImage(named: "deletebin")
+            deleteAction.backgroundColor = .red
+            
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            configuration.performsFirstActionWithFullSwipe = true
+            return configuration
+        }
 }
 
 extension ViewController: UITableViewDelegate {
@@ -92,6 +130,7 @@ extension ViewController: UITableViewDelegate {
         print(indexPath)
         performSegue(withIdentifier: "detail", sender: indexPath)
     }
+    
     
     // (세그웨이를 실행할때) 실제 데이터 전달 (ToDoData전달)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -100,7 +100,7 @@ final class CoreDataManager {
             // 요청서
             let request = NSFetchRequest<NSManagedObject>(entityName: self.modelName)
             // 단서 / 찾기 위한 조건 설정
-            request.predicate = NSPredicate(format: "date = %@", date as CVarArg)
+            request.predicate = NSPredicate(format: "createdDate = %@", date as CVarArg)
             
             do {
                 // 요청서를 통해서 데이터 가져오기 (조건에 일치하는 데이터 찾기) (fetch메서드)

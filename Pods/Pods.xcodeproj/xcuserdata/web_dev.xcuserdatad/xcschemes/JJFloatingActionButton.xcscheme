@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45944E834C9F43C533AF675FF06DAD44"
-               BuildableName = "LSHContributionView.framework"
-               BlueprintName = "LSHContributionView"
+               BlueprintIdentifier = "E109C6B6B466F202BA0B94E76B45D72B"
+               BuildableName = "JJFloatingActionButton.framework"
+               BlueprintName = "JJFloatingActionButton"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

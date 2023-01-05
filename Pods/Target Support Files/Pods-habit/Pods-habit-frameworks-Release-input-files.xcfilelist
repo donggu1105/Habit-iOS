@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-habit/Pods-habit-frameworks.sh
+${BUILT_PRODUCTS_DIR}/JJFloatingActionButton/JJFloatingActionButton.framework
 ${BUILT_PRODUCTS_DIR}/LSHContributionView/LSHContributionView.framework
