@@ -1,0 +1,16 @@
+PODS:
+  - LSHContributionView (1.0.0)
+
+DEPENDENCIES:
+  - LSHContributionView
+
+SPEC REPOS:
+  trunk:
+    - LSHContributionView
+
+SPEC CHECKSUMS:
+  LSHContributionView: 8b523e7e8c54159d1ba984fad99970ea3cb0f140
+
+PODFILE CHECKSUM: 49b410727d0491e5e500539c12949bbff698d276
+
+COCOAPODS: 1.11.3

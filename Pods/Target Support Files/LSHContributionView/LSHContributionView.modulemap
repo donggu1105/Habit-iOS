@@ -1,0 +1,6 @@
+framework module LSHContributionView {
+  umbrella header "LSHContributionView-umbrella.h"
+
+  export *
+  module * { export * }
+}
