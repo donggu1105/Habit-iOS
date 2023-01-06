@@ -16,7 +16,6 @@
 		6055BD43295D327200EC4791 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6055BD42295D327200EC4791 /* Assets.xcassets */; };
 		6055BD46295D327200EC4791 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6055BD44295D327200EC4791 /* LaunchScreen.storyboard */; };
 		6055BD59295D4BD900EC4791 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD58295D4BD900EC4791 /* CoreDataManager.swift */; };
-		6055BD5D295D514000EC4791 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD5C295D514000EC4791 /* HabitCell.swift */; };
 		6055BD61295D6F4700EC4791 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD60295D6F4700EC4791 /* RegisterViewController.swift */; };
 		6055BD63295D787800EC4791 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD62295D787800EC4791 /* DetailViewController.swift */; };
 		6055BD66295D7E9700EC4791 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD64295D7E9700EC4791 /* Habit+CoreDataClass.swift */; };
@@ -24,6 +23,8 @@
 		6098CC5E2963F09B0077D828 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098CC5D2963F09B0077D828 /* MyColor.swift */; };
 		6098CC602963F0AB0077D828 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098CC5F2963F0AB0077D828 /* UIColor+Extension.swift */; };
 		609CD2E7296683D200953336 /* LSHContributionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CD2E6296683D100953336 /* LSHContributionHelper.swift */; };
+		609CD2EC2967AFA300953336 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CD2EB2967AFA300953336 /* HabitCell.swift */; };
+		609CD2EE2967B74100953336 /* SKStoreReviewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CD2ED2967B74100953336 /* SKStoreReviewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,6 @@
 		6055BD45295D327200EC4791 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6055BD47295D327200EC4791 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6055BD58295D4BD900EC4791 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		6055BD5C295D514000EC4791 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		6055BD60295D6F4700EC4791 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6055BD62295D787800EC4791 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6055BD64295D7E9700EC4791 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataClass.swift"; path = "../../Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -45,6 +45,8 @@
 		6098CC5D2963F09B0077D828 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		6098CC5F2963F0AB0077D828 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		609CD2E6296683D100953336 /* LSHContributionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSHContributionHelper.swift; sourceTree = "<group>"; };
+		609CD2EB2967AFA300953336 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
+		609CD2ED2967B74100953336 /* SKStoreReviewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Extension.swift"; sourceTree = "<group>"; };
 		7427A406C09971717B6C2CBB /* Pods_habit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_habit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		819DB8B2D76280EA3CC33834 /* Pods-habit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-habit.debug.xcconfig"; path = "Target Support Files/Pods-habit/Pods-habit.debug.xcconfig"; sourceTree = "<group>"; };
 		FD30C141D55A57CF639FF7D6 /* Pods-habit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-habit.release.xcconfig"; path = "Target Support Files/Pods-habit/Pods-habit.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				6055BD3A295D327000EC4791 /* ViewController.swift */,
 				6055BD60295D6F4700EC4791 /* RegisterViewController.swift */,
 				6055BD62295D787800EC4791 /* DetailViewController.swift */,
+				609CD2ED2967B74100953336 /* SKStoreReviewController+Extension.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -130,7 +133,7 @@
 		6055BD4F295D392B00EC4791 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6055BD5C295D514000EC4791 /* HabitCell.swift */,
+				609CD2EB2967AFA300953336 /* HabitCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,13 +277,14 @@
 				6098CC602963F0AB0077D828 /* UIColor+Extension.swift in Sources */,
 				6098CC5E2963F09B0077D828 /* MyColor.swift in Sources */,
 				609CD2E7296683D200953336 /* LSHContributionHelper.swift in Sources */,
-				6055BD5D295D514000EC4791 /* HabitCell.swift in Sources */,
 				6055BD66295D7E9700EC4791 /* Habit+CoreDataClass.swift in Sources */,
 				6055BD41295D327000EC4791 /* habit.xcdatamodeld in Sources */,
 				6055BD39295D327000EC4791 /* SceneDelegate.swift in Sources */,
+				609CD2EC2967AFA300953336 /* HabitCell.swift in Sources */,
 				6055BD67295D7E9700EC4791 /* Habit+CoreDataProperties.swift in Sources */,
 				6055BD61295D6F4700EC4791 /* RegisterViewController.swift in Sources */,
 				6055BD59295D4BD900EC4791 /* CoreDataManager.swift in Sources */,
+				609CD2EE2967B74100953336 /* SKStoreReviewController+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

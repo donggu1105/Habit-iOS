@@ -20,12 +20,7 @@ class RegisterViewController: UIViewController {
     // ToDo 색깔 구분을 위해 임시적으로 숫자저장하는 변수
     // (나중에 어떤 색상이 선택되어 있는지 쉽게 파악하기 위해)
     var temporaryNum: Int64? = 1
-    
-//    var habitData: Habit? {
-//        didSet {
-//            temporaryNum = habitData?.color
-//        }
-//    }
+ 
     
     
     override func viewDidLoad() {

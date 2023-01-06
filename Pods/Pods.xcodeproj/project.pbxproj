@@ -78,7 +78,7 @@
 		88FA3285AA654E943DD58F9BB8C3329F /* Pods-habit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-habit.release.xcconfig"; sourceTree = "<group>"; };
 		8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		941DD4FFA413F981F3BC5EB9490C5263 /* LSHContributionView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LSHContributionView-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DFBCCEB09C0184D5C6338C7D1CEC00F /* JJFloatingActionButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JJFloatingActionButton.debug.xcconfig; sourceTree = "<group>"; };
 		A209989DD9D45BC2D43900DD61440049 /* JJFloatingActionButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JJFloatingActionButton-dummy.m"; sourceTree = "<group>"; };
 		A85BA8249B7DA975E4C9C40930077EB8 /* LSHContributionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LSHContributionView.modulemap; sourceTree = "<group>"; };
@@ -86,12 +86,12 @@
 		AD3DD258B099AD57C534DB2F1865595C /* JJFloatingActionButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JJFloatingActionButton.release.xcconfig; sourceTree = "<group>"; };
 		ADFB5A700CEA9069B32A3EA2F3DC496F /* Pods-habit-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-habit-frameworks.sh"; sourceTree = "<group>"; };
 		AF678B39D5F9A8C8AA9EA4766CD325D2 /* LSHContributionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LSHContributionView-umbrella.h"; sourceTree = "<group>"; };
-		B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JJFloatingActionButton; path = JJFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44C854EABAA733BC1CD965BE72F4192 /* JJFloatingActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJFloatingActionButton.swift; path = Sources/JJFloatingActionButton.swift; sourceTree = "<group>"; };
 		B56E7F5D7F1C4CA85CFF63204BFB0454 /* LSHContributionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LSHContributionView.debug.xcconfig; sourceTree = "<group>"; };
 		C9C5CEB8EC3A71A361D82B3A6DE0DE1B /* JJFloatingActionButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JJFloatingActionButton-umbrella.h"; sourceTree = "<group>"; };
 		D8244CEE88134BDCD36F68AB608497F3 /* Pods-habit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-habit-umbrella.h"; sourceTree = "<group>"; };
-		DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LSHContributionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LSHContributionView; path = LSHContributionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFAC17E35C4C855B7DD30B7CFD8A28A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		EA4CBF39A7F8DEA847719B1343DF8666 /* JJFloatingActionButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JJFloatingActionButton-Info.plist"; sourceTree = "<group>"; };
 		EACF4A32B8E30F94F354BC398B0409A3 /* JJFloatingActionButtonState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJFloatingActionButtonState.swift; path = Sources/JJFloatingActionButtonState.swift; sourceTree = "<group>"; };
@@ -177,14 +177,15 @@
 				1261CFDC5FC3FDA2683A75E58FF46DA4 /* LSHContributionView.swift */,
 				F16F9D08AC632A90A18F15DAF9F10932 /* Support Files */,
 			);
+			name = LSHContributionView;
 			path = LSHContributionView;
 			sourceTree = "<group>";
 		};
 		A4046E93C9FFC2DAD50E827C05B82300 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton.framework */,
-				DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView.framework */,
+				B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */,
+				DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView */,
 				559D9ADDF98224C708DEE2D1058D35ED /* Pods-habit */,
 			);
 			name = Products;
@@ -260,6 +261,7 @@
 				80D6B72FEC105F01F56D852D704D9F0D /* UIView+JJFloatingActionButton.swift */,
 				074C664C09039973FF8B26595CCCF9EC /* Support Files */,
 			);
+			name = JJFloatingActionButton;
 			path = JJFloatingActionButton;
 			sourceTree = "<group>";
 		};
@@ -308,7 +310,7 @@
 			);
 			name = LSHContributionView;
 			productName = LSHContributionView;
-			productReference = DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView.framework */;
+			productReference = DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView */;
 			productType = "com.apple.product-type.framework";
 		};
 		E109C6B6B466F202BA0B94E76B45D72B /* JJFloatingActionButton */ = {
@@ -326,7 +328,7 @@
 			);
 			name = JJFloatingActionButton;
 			productName = JJFloatingActionButton;
-			productReference = B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton.framework */;
+			productReference = B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */;
 			productType = "com.apple.product-type.framework";
 		};
 		E40CA9AEF797EABB47317FE0550E5309 /* Pods-habit */ = {
@@ -356,7 +358,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 12.0";
@@ -513,7 +515,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/LSHContributionView/LSHContributionView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/LSHContributionView/LSHContributionView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +570,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -615,7 +616,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -650,7 +651,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -741,7 +742,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -785,7 +785,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/LSHContributionView/LSHContributionView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/LSHContributionView/LSHContributionView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

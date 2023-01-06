@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import StoreKit
 import JJFloatingActionButton
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     // 코어데이터
     let coreDataManager = CoreDataManager.shared
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
     // 화면에 다시 진입할때마다 테이블뷰 리로드
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        collectionView.reloadData()
     }
     
     
@@ -28,7 +29,9 @@ class ViewController: UIViewController {
         
         // 네비게이션 셋업
         setupNaviBar()
-        setupTableView()
+        // 콜렉션뷰 셋업
+        setUpCollectionView()
+        // 플로팅 버튼 셋업
         setUpFloatingButton()
     }
     
@@ -37,24 +40,27 @@ class ViewController: UIViewController {
 
         actionButton.addItem(title: "잔디 등록하기", image: UIImage(systemName: "pencil.tip.crop.circle.badge.plus")?.withRenderingMode(.alwaysTemplate)) { item in
             self.performSegue(withIdentifier: "register", sender: nil)
-            
+        }
+        
+        actionButton.addItem(title: "잔디 등록 팁", image: UIImage(systemName: "list.clipboard.fill")?.withRenderingMode(.alwaysTemplate)) { item in
+            self.performSegue(withIdentifier: "tip", sender: nil)
+        }
+        
+        actionButton.addItem(title: "별점 남기기", image: UIImage(systemName: "paperplane.fill")?.withRenderingMode(.alwaysTemplate)) { item in
+            SKStoreReviewController.requestReviewInCurrentScene()
         }
 
-//        actionButton.addItem(title: "item 2", image: UIImage(named: "Second")?.withRenderingMode(.alwaysTemplate)) { item in
-//           do something
-//        }
-
-        // last 4 lines can be replaced with
          actionButton.display(inViewController: self)
     }
     
-    func setupTableView() {
+    func setUpCollectionView() {
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // extension 설정
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        // 컴포지셔널 레이아웃 설정
+        collectionView.collectionViewLayout = createCompositionalLayout()
             
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.backgroundColor = .red
-        // 테이블뷰의 선 없애기
-        tableView.separatorStyle = .none
     }
     
     func setupNaviBar() {
@@ -72,86 +78,95 @@ class ViewController: UIViewController {
 //        self.navigationItem.rightBarButtonItem = plusButton
         
     }
+//    @objc func plusButtonTapped() {
+//        performSegue(withIdentifier: "register", sender: nil)
+//    }
     
-    @objc func plusButtonTapped() {
-        performSegue(withIdentifier: "register", sender: nil)
+    // (세그웨이를 실행할때) 실제 데이터 전달 (ToDoData전달)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail" {
+            let detailVC = segue.destination as! DetailViewController
+            guard let indexPath = sender as? IndexPath else { return }
+            detailVC.habitData = coreDataManager.getHabitList()[indexPath.row]
+        }
     }
-
 }
 
+extension ViewController {
+    
+    // 콤포지셔널 레이아웃 설정
+    fileprivate func createCompositionalLayout() -> UICollectionViewLayout {
+        // 콤포지셔널 레이아웃 생성
+        let layout = UICollectionViewCompositionalLayout {
+            // 만들게되면 튜플 (키: 값, 키:값) 의 묶음으로 들어옴 반화하는것은 NSCollectionLayoutSection 콜렉션 레이아웃 섹션을 반환해야함
+            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+            
+            // 아이템에 대한 사이즈
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            
+            
+            // 위에서 만든 아이템 사이즈로 아이템 만들기
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            // 아이템 간의 간격 설정
+            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+            
+            let groupHeight = NSCollectionLayoutDimension.fractionalWidth(1/2)
+            
+            // 그룹사이즈
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
+            
+            // 그룹사이즈로 그룹 만들기
+//            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item, item, item])
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+            
+            // 만든 그룹으로 섹션 만들기
+            let section = NSCollectionLayoutSection(group: group)
+            // 오른쪽 스크롤 가능
+//            section.orthogonalScrollingBehavior = .continuous
+//            section.orthogonalScrollingBehavior = .groupPaging
+            
+            // 섹션에 대한 간격
+            section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
+            
+            return section
+        }
+        
+        return layout
+    }
+}
 
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ViewController: UICollectionViewDelegate {
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detail", sender: indexPath)
+    }
+    
+}
+
+extension ViewController: UICollectionViewDataSource {
+    
+    // 각 섹션에 들어가는 아이템 개수
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return coreDataManager.getHabitList().count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print(#function)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell", for: indexPath) as! HabitCell
+    // 각 콜렉션뷰셀에대한 설정
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cellId = String(describing: HabitCell.self)
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HabitCell
         // 셀에 모델(ToDoData) 전달
         let habitData = coreDataManager.getHabitList()
         cell.data = habitData[indexPath.row]
         
-        // 셀위에 있는 버튼이 눌렸을때 (뷰컨트롤러에서) 어떤 행동을 하기 위해서 클로저 전달
-//        cell.updateButtonPressed = { [weak self] (senderCell) in
-//            // 뷰컨트롤러에 있는 세그웨이의 실행
-//            self?.performSegue(withIdentifier: "ToDoCell", sender: indexPath)
-//        }
-        
-        cell.selectionStyle = .none
         return cell
     }
     
-    // 테이블 지우기
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            let deleteAction = UIContextualAction(style: .destructive, title: nil) { _, _, complete in
-                let habit = self.coreDataManager.getHabitList()[indexPath.row]
-                self.coreDataManager.deleteData(data: habit) {
-                    print("삭제완료")
-                }
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-                complete(true)
-            }
-            
-            // here set your image and background color
-            deleteAction.image = UIImage(named: "deletebin")
-            deleteAction.backgroundColor = .red
-            
-            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-            configuration.performsFirstActionWithFullSwipe = true
-            return configuration
-        }
 }
 
-extension ViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(#function)
-        print(indexPath)
-        performSegue(withIdentifier: "detail", sender: indexPath)
-    }
-    
-    
-    // (세그웨이를 실행할때) 실제 데이터 전달 (ToDoData전달)
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(#function)
-        if segue.identifier == "detail" {
-            print("detail")
-            let detailVC = segue.destination as! DetailViewController
-            
-            guard let indexPath = sender as? IndexPath else { return }
-            detailVC.habitData = coreDataManager.getHabitList()[indexPath.row]
-        } else if segue.identifier == "register" {
-            print("register")
-        }
-    }
-    
-    // 테이블뷰의 높이를 자동적으로 추청하도록 하는 메서드
-    // (ToDo에서 메세지가 길때는 셀의 높이를 더 높게 ==> 셀의 오토레이아웃 설정도 필요)
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-}
 
 
 
