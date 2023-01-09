@@ -22,4 +22,5 @@ extension LSHContributionView {
         
         return dataSquare
     }
+    
 }

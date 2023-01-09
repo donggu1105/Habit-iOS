@@ -41,18 +41,40 @@ class HabitCell: UICollectionViewCell {
     
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
-        contributionView.data = LSHContributionView.makeDefaultSquareData()
         contributionView.colorScheme = "Default"
-//        contributionView.addEntry(with: CGPoint(x: 1, y: 1), level: 5)
-
         
+        // 잔디 색칠하기
+        contributionView.data = LSHContributionView.makeDefaultSquareData()
+        let acheiveCnt = Int(data?.acheiveCount ?? 0)
+        colorWithAcheiveCount(acheiveCount: acheiveCnt)
         
         nameLabel.text = data?.name
         goalTitleLabel.text = data?.goalTitle
 
     }
     
-
-
     
+    func colorWithAcheiveCount(acheiveCount: Int) {
+        
+        
+        var iterCnt = 0
+        let x = acheiveCount % 6 // 나머지
+        let y = acheiveCount / 6 // 몫
+        
+
+        repeat {
+            print("x: \(x) , y: \(y), iterCnt: \(iterCnt)")
+            if (iterCnt < y) {
+                for color in 0...5 {
+                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 4)
+                }
+                
+            } else {
+                for color in 0..<x {
+                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 4)
+                }
+            }
+            iterCnt += 1
+        } while (iterCnt <= y)
+    }
 }

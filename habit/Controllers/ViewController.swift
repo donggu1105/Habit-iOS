@@ -42,9 +42,9 @@ class ViewController: UIViewController {
             self.performSegue(withIdentifier: "register", sender: nil)
         }
         
-        actionButton.addItem(title: "잔디 등록 팁", image: UIImage(systemName: "list.clipboard.fill")?.withRenderingMode(.alwaysTemplate)) { item in
-            self.performSegue(withIdentifier: "tip", sender: nil)
-        }
+//        actionButton.addItem(title: "잔디 등록 팁", image: UIImage(systemName: "list.clipboard.fill")?.withRenderingMode(.alwaysTemplate)) { item in
+//            self.performSegue(withIdentifier: "tip", sender: nil)
+//        }
         
         actionButton.addItem(title: "별점 남기기", image: UIImage(systemName: "paperplane.fill")?.withRenderingMode(.alwaysTemplate)) { item in
             SKStoreReviewController.requestReviewInCurrentScene()
