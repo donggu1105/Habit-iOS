@@ -43,17 +43,17 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xKq-cO-krJ">
-                                                    <rect key="frame" x="5" y="135" width="52" height="51"/>
+                                                    <rect key="frame" x="5" y="135" width="33" height="46.333333333333343"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOd-AR-aLs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="33" height="15.666666666666666"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fd-Zz-PlE">
-                                                            <rect key="frame" x="0.0" y="33" width="43.666666666666664" height="18"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <rect key="frame" x="0.0" y="30.666666666666661" width="26.333333333333332" height="15.666666666666668"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -158,10 +158,10 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0s0-PB-CWU">
-                                <rect key="frame" x="20" y="317" width="353" height="50"/>
+                                <rect key="frame" x="10" y="358" width="373" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="413-Uk-y90"/>
+                                    <constraint firstAttribute="height" constant="50" id="phM-2w-myz"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A4g-kO-QJi">
                                     <size key="itemSize" width="67" height="48"/>
@@ -182,9 +182,9 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQt-81-YwT">
-                                <rect key="frame" x="10" y="427" width="373" height="50"/>
+                                <rect key="frame" x="10" y="448" width="373" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="7cf-cl-xsv"/>
+                                    <constraint firstAttribute="height" constant="50" id="69x-Th-Xh4"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -192,20 +192,29 @@
                                     <action selector="registerButtonTapped:" destination="WjS-uZ-7l0" eventType="touchUpInside" id="bLv-Op-YEx"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jfw-6B-vyL">
+                                <rect key="frame" x="178.66666666666666" y="307" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ho0-ci-5Gz"/>
+                                    <constraint firstAttribute="width" constant="36" id="k1w-si-psM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="399-0i-FUW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jfw-6B-vyL" firstAttribute="centerX" secondItem="x1c-j0-nbn" secondAttribute="centerX" id="1uz-Y7-qcD"/>
+                            <constraint firstItem="HQt-81-YwT" firstAttribute="leading" secondItem="399-0i-FUW" secondAttribute="leading" constant="10" id="9yP-XJ-Grs"/>
                             <constraint firstItem="LO7-vc-xxL" firstAttribute="leading" secondItem="399-0i-FUW" secondAttribute="leading" constant="10" id="A0b-KB-0Y9"/>
                             <constraint firstItem="LO7-vc-xxL" firstAttribute="top" secondItem="ySQ-Tu-HTo" secondAttribute="bottom" constant="50" id="BUy-m8-jo8"/>
-                            <constraint firstItem="399-0i-FUW" firstAttribute="trailing" secondItem="HQt-81-YwT" secondAttribute="trailing" constant="10" id="E9Y-0U-B56"/>
-                            <constraint firstItem="0s0-PB-CWU" firstAttribute="top" secondItem="LO7-vc-xxL" secondAttribute="bottom" constant="30" id="IN8-eL-fJS"/>
-                            <constraint firstItem="399-0i-FUW" firstAttribute="trailing" secondItem="0s0-PB-CWU" secondAttribute="trailing" constant="20" id="MhR-dC-IHg"/>
-                            <constraint firstItem="0s0-PB-CWU" firstAttribute="leading" secondItem="399-0i-FUW" secondAttribute="leading" constant="20" id="OcR-GB-1U3"/>
-                            <constraint firstItem="HQt-81-YwT" firstAttribute="leading" secondItem="399-0i-FUW" secondAttribute="leading" constant="10" id="On8-7o-eSG"/>
+                            <constraint firstItem="399-0i-FUW" firstAttribute="trailing" secondItem="0s0-PB-CWU" secondAttribute="trailing" constant="10" id="I3w-3M-e6Q"/>
                             <constraint firstItem="ySQ-Tu-HTo" firstAttribute="leading" secondItem="399-0i-FUW" secondAttribute="leading" constant="10" id="RYT-2o-cEv"/>
+                            <constraint firstItem="jfw-6B-vyL" firstAttribute="top" secondItem="LO7-vc-xxL" secondAttribute="bottom" constant="20" id="iMJ-Pa-Fky"/>
+                            <constraint firstItem="0s0-PB-CWU" firstAttribute="top" secondItem="jfw-6B-vyL" secondAttribute="bottom" constant="15" id="in6-c7-pkg"/>
+                            <constraint firstItem="HQt-81-YwT" firstAttribute="top" secondItem="0s0-PB-CWU" secondAttribute="bottom" constant="40" id="nx4-QT-83D"/>
                             <constraint firstItem="399-0i-FUW" firstAttribute="trailing" secondItem="ySQ-Tu-HTo" secondAttribute="trailing" constant="10" id="p4V-GO-jeg"/>
-                            <constraint firstItem="HQt-81-YwT" firstAttribute="top" secondItem="0s0-PB-CWU" secondAttribute="bottom" constant="60" id="pHx-kv-tHK"/>
+                            <constraint firstItem="399-0i-FUW" firstAttribute="trailing" secondItem="HQt-81-YwT" secondAttribute="trailing" constant="10" id="ukW-yz-ADd"/>
+                            <constraint firstItem="0s0-PB-CWU" firstAttribute="leading" secondItem="399-0i-FUW" secondAttribute="leading" constant="10" id="umE-kQ-Lh3"/>
                             <constraint firstItem="399-0i-FUW" firstAttribute="trailing" secondItem="LO7-vc-xxL" secondAttribute="trailing" constant="10" id="ykX-rr-S36"/>
                             <constraint firstItem="ySQ-Tu-HTo" firstAttribute="top" secondItem="399-0i-FUW" secondAttribute="top" constant="50" id="ywu-7H-aYc"/>
                         </constraints>
@@ -214,6 +223,7 @@
                     <connections>
                         <outlet property="colorCollectionView" destination="0s0-PB-CWU" id="5Gj-85-Duh"/>
                         <outlet property="goalTextField" destination="LO7-vc-xxL" id="Sch-aD-cUX"/>
+                        <outlet property="grassImage" destination="jfw-6B-vyL" id="CWZ-fO-gde"/>
                         <outlet property="nameTextField" destination="ySQ-Tu-HTo" id="klp-hp-FAY"/>
                         <outlet property="registerButton" destination="HQt-81-YwT" id="WD8-q1-Zjf"/>
                     </connections>

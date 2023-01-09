@@ -8,6 +8,8 @@
 import UIKit
 
 enum MyColor: Int64, CaseIterable {
+    // main
+    case main = 999
     // green
     case green1 = 0
     case green2 = 1
@@ -22,6 +24,9 @@ enum MyColor: Int64, CaseIterable {
     
     var backgoundColor: UIColor {
         switch self {
+            
+        case .main:
+            return UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0) /* #239a3b */
         case .green1:
             return UIColor(hexString: "264653")
         case .green2:
@@ -52,6 +57,8 @@ enum MyColor: Int64, CaseIterable {
     
     var buttonColor: UIColor {
         switch self {
+        case .main:
+            return UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0) /* #239a3b */
         case .green1:
             return UIColor(hexString: "264653")
         case .green2:

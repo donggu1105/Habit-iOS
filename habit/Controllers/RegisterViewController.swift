@@ -11,7 +11,8 @@ class RegisterViewController: UIViewController {
     
     let coreDataManager = CoreDataManager.shared
 
-
+    @IBOutlet weak var grassImage: UIImageView!
+    
     @IBOutlet weak var colorCollectionView: UICollectionView!
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -22,15 +23,25 @@ class RegisterViewController: UIViewController {
     
     // ToDo 색깔 구분을 위해 임시적으로 숫자저장하는 변수
     // (나중에 어떤 색상이 선택되어 있는지 쉽게 파악하기 위해)
-    var temporaryNum: Int64? = 1
+    var temporaryNum: Int64? = 0 {
+        didSet {
+        }
+    }
  
+    
+    var habit: Habit? {
+        didSet {
+            temporaryNum = habit?.color
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        
+        configureUI()
     }
+
 
     func setup() {
         self.title = "새로운 잔디"
@@ -42,39 +53,81 @@ class RegisterViewController: UIViewController {
         colorCollectionView.layer.cornerRadius = 2
         colorCollectionView.isScrollEnabled = false
         colorCollectionView.collectionViewLayout = createCompositionalLayout()
+        
+        // 이미지
+        grassImage.image = UIImage(named: "grass")?.withRenderingMode(.alwaysTemplate)
 
         // 잔디 이름
         nameTextField.delegate = self
-        nameTextField.placeholder = "잔디 이름"
         nameTextField.clearButtonMode = .whileEditing
         nameTextField.backgroundColor = UIColor(hexString: "14171e")
         // 목표
         goalTextField.delegate = self
-        goalTextField.placeholder = "목표"
         goalTextField.clearButtonMode = .whileEditing
         goalTextField.backgroundColor = UIColor(hexString: "14171e")
         // 버튼
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 8
-        registerButton.setTitle("잔디 만들기", for: .normal)
         registerButton.backgroundColor = UIColor(hexString: "14171e")
         
 
     }
     
+    func configureUI() {
+        
+        // 기존데이터가 있을때
+        if let habit = self.habit {
+            self.title = "잔디 수정하기"
+            
+            guard let text = habit.name else { return }
+            nameTextField.text = text
+            registerButton.setTitle("잔디 수정하기", for: .normal)
+            nameTextField.becomeFirstResponder()
+            grassImage.tintColor = MyColor(rawValue:  habit.color)?.backgoundColor
+            
+        // 기존데이터가 없을때
+        } else {
+            self.title = "새로운 잔디"
+            registerButton.setTitle("잔디 만들기", for: .normal)
+            nameTextField.placeholder = "잔디 이름"
+            goalTextField.placeholder = "목표"
+            grassImage.tintColor = MyColor.main.backgoundColor
+        }
+    }
+    
     
     @IBAction func registerButtonTapped(_ sender: UIButton) {
-        coreDataManager.saveData(name: nameTextField.text,
-                                 goalTitle: goalTextField.text,
-                                 goalCount: 30,
-                                 color: 1,
-                                 achieveCount: 0) {
-            print("저장완료")
-            // 다시 전화면으로 돌아가기
-            self.navigationController?.popViewController(animated: true)
+        
+        guard nameTextField.isValid(with: "잔디이름") else {
+            let alert = UIAlertController(title: "잔디 이름을 입력해주세요.", message: nil, preferredStyle: .alert)
+            let confirm = UIAlertAction(title: "확인", style: .default)
+            alert.addAction(confirm)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        
+        // 기존 데이터 있을때
+        if let habit = self.habit {
+            // 텍스트뷰에 저장되어 있는 메세지
+            habit.name = nameTextField.text
+            habit.color = temporaryNum ?? 0
+            coreDataManager.updateData(newData: habit, completion: {
+                print("업데이트 완료")
+                // 다시 전화면으로 돌아가기
+                self.navigationController?.popViewController(animated: true)
+            })
+        } else {
+            coreDataManager.saveData(name: nameTextField.text,
+                                     goalTitle: goalTextField.text,
+                                     goalCount: Int64(Goal.goalCount),
+                                     color: temporaryNum ?? 0,
+                                     achieveCount: 0) {
+                print("저장완료")
+                // 다시 전화면으로 돌아가기
+                self.navigationController?.popViewController(animated: true)
             }
-        
-        
+        }
     }
 
 
@@ -86,10 +139,21 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
     }
+    
+    
+    
 }
 
 
 extension RegisterViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! ColorCell
+        
+        temporaryNum = color.
+        grassImage.tintColor = cell.backgroundColor
+
+    }
     
 }
 

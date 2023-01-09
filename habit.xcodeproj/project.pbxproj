@@ -26,6 +26,8 @@
 		609CD2E7296683D200953336 /* LSHContributionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CD2E6296683D100953336 /* LSHContributionHelper.swift */; };
 		609CD2EC2967AFA300953336 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CD2EB2967AFA300953336 /* HabitCell.swift */; };
 		609CD2EE2967B74100953336 /* SKStoreReviewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609CD2ED2967B74100953336 /* SKStoreReviewController+Extension.swift */; };
+		60AF535C296BED75005B8F1B /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF535B296BED74005B8F1B /* UITextField+Extension.swift */; };
+		60AF535E296BFD7C005B8F1B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AF535D296BFD7C005B8F1B /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		609CD2E6296683D100953336 /* LSHContributionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSHContributionHelper.swift; sourceTree = "<group>"; };
 		609CD2EB2967AFA300953336 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		609CD2ED2967B74100953336 /* SKStoreReviewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Extension.swift"; sourceTree = "<group>"; };
+		60AF535B296BED74005B8F1B /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		60AF535D296BFD7C005B8F1B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		7427A406C09971717B6C2CBB /* Pods_habit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_habit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		819DB8B2D76280EA3CC33834 /* Pods-habit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-habit.debug.xcconfig"; path = "Target Support Files/Pods-habit/Pods-habit.debug.xcconfig"; sourceTree = "<group>"; };
 		FD30C141D55A57CF639FF7D6 /* Pods-habit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-habit.release.xcconfig"; path = "Target Support Files/Pods-habit/Pods-habit.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				6098CC5D2963F09B0077D828 /* MyColor.swift */,
 				609CD2E6296683D100953336 /* LSHContributionHelper.swift */,
 				605516D2296BA51500A2B87E /* UIColor+Extension.swift */,
+				60AF535B296BED74005B8F1B /* UITextField+Extension.swift */,
+				60AF535D296BFD7C005B8F1B /* Constant.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -275,10 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6055BD63295D787800EC4791 /* DetailViewController.swift in Sources */,
+				60AF535E296BFD7C005B8F1B /* Constant.swift in Sources */,
 				6055BD3B295D327000EC4791 /* ViewController.swift in Sources */,
 				6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */,
 				6098CC5E2963F09B0077D828 /* MyColor.swift in Sources */,
 				609CD2E7296683D200953336 /* LSHContributionHelper.swift in Sources */,
+				60AF535C296BED75005B8F1B /* UITextField+Extension.swift in Sources */,
 				6055BD66295D7E9700EC4791 /* Habit+CoreDataClass.swift in Sources */,
 				6055BD41295D327000EC4791 /* habit.xcdatamodeld in Sources */,
 				605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */,
