@@ -33,15 +33,9 @@ extension Habit {
     }
     
     var percentStr: String? {
-        
         return String(percent) + "%"
-        
-        
     }
-    
-
 }
 
 extension Habit : Identifiable {
-
 }

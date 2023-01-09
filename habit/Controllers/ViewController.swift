@@ -25,14 +25,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .darkGray
+        self.view.backgroundColor = .black
         
         // 네비게이션 셋업
         setupNaviBar()
         // 콜렉션뷰 셋업
         setUpCollectionView()
+        // 롱프레스 버튼 셋업
+        setupLongGestureRecognizerOnCollection()
         // 플로팅 버튼 셋업
         setUpFloatingButton()
+        
+        
     }
     
     func setUpFloatingButton() {
@@ -53,22 +57,36 @@ class ViewController: UIViewController {
          actionButton.display(inViewController: self)
     }
     
+    func setupLongGestureRecognizerOnCollection() {
+        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
+        longPressedGesture.minimumPressDuration = 0.5
+        longPressedGesture.delegate = self
+        longPressedGesture.delaysTouchesBegan = true
+        collectionView?.addGestureRecognizer(longPressedGesture)
+        
+    }
+    
+    
+    
     func setUpCollectionView() {
+        collectionView.backgroundColor = .black
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         // extension 설정
         collectionView.dataSource = self
         collectionView.delegate = self
         // 컴포지셔널 레이아웃 설정
         collectionView.collectionViewLayout = createCompositionalLayout()
+
+        
             
     }
+   
     
     func setupNaviBar() {
 
         self.title = "잔디 목록"
-        
-        // 네비게이션바 타이틀 크게
-//        navigationController?.navigationBar.prefersLargeTitles = true
+//         네비게이션바 타이틀 크게
+        navigationController?.navigationBar.prefersLargeTitles = true
         // 네비게이션바 타이틀 중앙
 //        navigationItem.largeTitleDisplayMode = .never
 
@@ -109,9 +127,9 @@ extension ViewController {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
             // 아이템 간의 간격 설정
-            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+            item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
             
-            let groupHeight = NSCollectionLayoutDimension.fractionalWidth(1/2)
+            let groupHeight = NSCollectionLayoutDimension.fractionalHeight(0.9/3)
             
             // 그룹사이즈
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
@@ -143,6 +161,43 @@ extension ViewController: UICollectionViewDelegate {
         performSegue(withIdentifier: "detail", sender: indexPath)
     }
     
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        configureContextMenu(indexPath: indexPath)
+
+    }
+    
+
+
+    
+    func configureContextMenu(indexPath: IndexPath) -> UIContextMenuConfiguration {
+           let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
+               
+               let edit = UIAction(title: "수정하기", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
+                   print("edit button clicked")
+                   //add tasks...
+               }
+               let delete = UIAction(title: "삭제하기", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { (_) in
+                   
+                   // alert
+                   let alert = UIAlertController(title: "정말 삭제하시겠습니까?", message: nil, preferredStyle: .alert)
+                   let confirm = UIAlertAction(title: "확인", style: .default) { (_) in
+                          let habit = self.coreDataManager.getHabitList()[indexPath.row]
+                          self.coreDataManager.deleteData(data: habit, completion: {
+                              self.collectionView.reloadData()
+                          })
+                   }
+                       let cancel = UIAlertAction(title: "취소", style: .cancel)
+                       
+                       alert.addAction(confirm)
+                       alert.addAction(cancel)
+                       
+                       self.present(alert, animated: true, completion: nil)
+                   }
+               return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])
+           }
+           return context
+       }
+    
 }
 
 extension ViewController: UICollectionViewDataSource {
@@ -167,6 +222,32 @@ extension ViewController: UICollectionViewDataSource {
     
 }
 
+extension ViewController: UIGestureRecognizerDelegate {
+    
+    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
+        if (gestureRecognizer.state != .began) {
+            return
+        }
+
+        let p = gestureRecognizer.location(in: collectionView)
+
+        if let indexPath = collectionView?.indexPathForItem(at: p) {
+            print("Long press at item: \(indexPath.row)")
+        }
+    }
+    
+}
+
+//
+//extension ViewController: CellActionDelegate {
+//
+//
+//    func removeCellAtIndex(_ index: Int) {
+//        print(1)
+//
+//    }
+//}
+//
 
 
 
