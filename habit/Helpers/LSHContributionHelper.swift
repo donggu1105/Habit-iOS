@@ -13,7 +13,7 @@ extension LSHContributionView {
         var dataSquare: [[Int]] = []
         var subArr: [Int] = []
         for _ in 0...4 {
-            for _ in 1...6 {
+            for _ in 1...Goal.grassX {
                 subArr.append(0)
             }
             dataSquare.append(subArr)

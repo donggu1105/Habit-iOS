@@ -11,8 +11,6 @@ class DetailViewController: UIViewController {
 
     let coreDataManager = CoreDataManager.shared
 
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var golaTextField: UITextField!
     @IBOutlet weak var acheiveButton: UIButton!
     
     var habitData: Habit?
@@ -40,13 +38,6 @@ class DetailViewController: UIViewController {
         acheiveButton.clipsToBounds = true
         acheiveButton.layer.cornerRadius = 8
         acheiveButton.setTitle("잔디 심기", for: .normal)
-        
-        
-        nameTextField.backgroundColor = .clear
-        golaTextField.backgroundColor = .clear
-        nameTextField.text = habitData?.name
-        golaTextField.text = habitData?.goalTitle
-
         
     }
  

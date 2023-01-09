@@ -58,7 +58,7 @@ open class LSHContributionView: UIView {
         self.backgroundColor = .white
         
         // Disable if AutoLayout is used
-        self.translatesAutoresizingMaskIntoConstraints = false
+//        self.translatesAutoresizingMaskIntoConstraints = false
         
         // Accessibility
         isAccessibilityElement = true
@@ -156,9 +156,12 @@ open class LSHContributionView: UIView {
         var color3 = pinkColor
         var color4 = pinkColor
         
+//        print("color : \(color)")
+//        print("colorScheme : \(colorScheme)")
         // Set Color Scheme
         if colorScheme == "Default" {
-            color0 = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) /* #eeeeee */
+//            color0 = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1.0) /* #eeeeee */
+            color0 = .gray
             color1 = UIColor(red:0.78, green:0.89, blue:0.55, alpha:1.0) /* #c6e48b */
             color2 = UIColor(red:0.48, green:0.79, blue:0.44, alpha:1.0) /* #7bc96f */
             color3 = UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0) /* #239a3b */
@@ -197,6 +200,7 @@ open class LSHContributionView: UIView {
             useColor = pinkColor
         }
         
+        
         useColor.set()
         
         // fill the path
@@ -220,3 +224,4 @@ open class LSHContributionView: UIView {
     }
 
 }
+            
