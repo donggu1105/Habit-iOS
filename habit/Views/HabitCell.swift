@@ -58,7 +58,6 @@ class HabitCell: UICollectionViewCell {
     
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
-        print(#function)
         // 잔디 이름
         nameLabel.text = data?.name
         // 목표
@@ -88,15 +87,16 @@ class HabitCell: UICollectionViewCell {
         
 
         repeat {
-            print("x: \(x) , y: \(y), iterCnt: \(iterCnt)")
+//            print("acheiveCount: \(acheiveCount)")
+//            print("x: \(x) , y: \(y), iterCnt: \(iterCnt)")
             if (iterCnt < y) {
-                for color in 1...Goal.grassX {
-                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 4)
+                for color in 0..<Goal.grassX {
+                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 3)
                 }
-                
             } else {
+//                print("줄바뀜")
                 for color in 0..<x {
-                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 4)
+                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 3)
                 }
             }
             iterCnt += 1

@@ -10,38 +10,45 @@ import UIKit
 class DetailViewController: UIViewController {
 
     let coreDataManager = CoreDataManager.shared
+    
+    var habit: Habit?
+
+//    weak var myParent: CallParent?
 
     @IBOutlet weak var acheiveButton: UIButton!
     
-    var habitData: Habit?
 
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = .gray
-        
-        //      네비게이션바 우측에 Plus 버튼 만들기
-                let plusButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(plusButtonTapped))
-                plusButton.tintColor = .black
-                navigationItem.rightBarButtonItem = plusButton
         setUp()
     }
     
-    @objc func plusButtonTapped() {
-        
-    }
     
     func setUp() {
+
+        self.view.backgroundColor = .black
         // 버튼
         acheiveButton.clipsToBounds = true
         acheiveButton.layer.cornerRadius = 8
-        acheiveButton.setTitle("잔디 심기", for: .normal)
+        acheiveButton.setTitle("잔디 심기 🌱", for: .normal)
+        acheiveButton.backgroundColor = UIColor(hexString: "14171e")
         
     }
  
     @IBAction func acheiveButtonTapped(_ sender: UIButton) {
+        
+        guard let habit = habit else {return}
+        habit.acheiveCount = habit.acheiveCount + 1
+        
+        coreDataManager.updateData(newData: habit, completion: {
+            print("업데이트 완료")
+            // 다시 전화면으로 돌아가기
+            self.navigationController?.popViewController(animated: true)
+
+        })
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

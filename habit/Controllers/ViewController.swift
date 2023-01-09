@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     // 화면에 다시 진입할때마다 테이블뷰 리로드
     override func viewWillAppear(_ animated: Bool) {
+        print(#function)
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
@@ -105,7 +106,7 @@ class ViewController: UIViewController {
         if segue.identifier == "detail" {
             let detailVC = segue.destination as! DetailViewController
             guard let indexPath = sender as? IndexPath else { return }
-            detailVC.habitData = coreDataManager.getHabitList()[indexPath.row]
+            detailVC.habit = coreDataManager.getHabitList()[indexPath.row]
         } else if segue.identifier == "register" {
             let registerVC = segue.destination as! RegisterViewController
             guard let indexPath = sender as? IndexPath else { return }
@@ -241,10 +242,5 @@ extension ViewController: UIGestureRecognizerDelegate {
     }
     
 }
-
-
-
-
-
 
 
