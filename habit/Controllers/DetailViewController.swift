@@ -61,7 +61,7 @@ class DetailViewController: UIViewController {
             let percentStr = String(Int(percent)) + "%"
             
             circularProgressView.setprogress(0.0, UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0), percentStr, "D-\(habit.goalCount - habit.acheiveCount)")
-            circularProgressView.animate(percent / 100, duration: 1)
+            circularProgressView.animate(Double(percent) / 100, duration: 1)
             
         }
 

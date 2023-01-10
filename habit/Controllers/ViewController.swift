@@ -21,10 +21,7 @@ class ViewController: UIViewController {
         collectionView.reloadData()
     }
     
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        self.collectionView.reloadData()
-//    }
+
     
     
     func collectionReload() {

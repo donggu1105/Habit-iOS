@@ -71,7 +71,7 @@
 		2526F1C35E1EE3E7C762C59866741FF1 /* Pods-habit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-habit-Info.plist"; sourceTree = "<group>"; };
 		26495E7C3AB916F378F60F939C0AE0C5 /* JJFloatingActionButtonState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJFloatingActionButtonState.swift; path = Sources/JJFloatingActionButtonState.swift; sourceTree = "<group>"; };
 		2ED2BB58CD3710AD535F6538D25F38CE /* PContributionsView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PContributionsView-umbrella.h"; sourceTree = "<group>"; };
-		3699D01B4398C65D46745DA63B173CD4 /* PContributionsView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PContributionsView; path = PContributionsView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3699D01B4398C65D46745DA63B173CD4 /* PContributionsView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PContributionsView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ACFF113EA6A1DCF70F9B171B88613A0 /* LSHContributionView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LSHContributionView.release.xcconfig; sourceTree = "<group>"; };
 		42B274C3FB5AAF8AF493E795C0BE6057 /* Pods-habit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-habit.modulemap"; sourceTree = "<group>"; };
 		4626F66B43B8F8B7B50E95EF0565785B /* LSHContributionView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LSHContributionView-Info.plist"; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		5288313082DCB7C7C4085D429300F6BF /* JJFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJFloatingActionButtonDelegate.swift; path = Sources/JJFloatingActionButtonDelegate.swift; sourceTree = "<group>"; };
 		535C4A48D7C223B4193A9D94FE50D895 /* LSHContributionView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LSHContributionView-umbrella.h"; sourceTree = "<group>"; };
 		553F02396820467C46BFBDBFD5A82BB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
-		559D9ADDF98224C708DEE2D1058D35ED /* Pods-habit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-habit"; path = Pods_habit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		559D9ADDF98224C708DEE2D1058D35ED /* Pods_habit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_habit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57819F0BD5CDEEFEE2BC656D680526BA /* JJFloatingActionButton+Animation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "JJFloatingActionButton+Animation.swift"; path = "Sources/JJFloatingActionButton+Animation.swift"; sourceTree = "<group>"; };
 		62AC60AFACC5FDBF4C026F41E91A5F4E /* Pods-habit-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-habit-acknowledgements.plist"; sourceTree = "<group>"; };
 		647E7699F36522B2279566FE2A197FD9 /* Styles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Styles.swift; path = Sources/Styles.swift; sourceTree = "<group>"; };
@@ -94,11 +94,11 @@
 		863491DF9CA97BBA416A1D95B0D5EB5F /* JJActionItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJActionItem.swift; path = Sources/JJActionItem.swift; sourceTree = "<group>"; };
 		88FA3285AA654E943DD58F9BB8C3329F /* Pods-habit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-habit.release.xcconfig"; sourceTree = "<group>"; };
 		8A0BCC50A12B61F847D207DBB8CFF0AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A488613DB4E90B62035A3144FD9898AD /* JJFloatingActionButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JJFloatingActionButton.modulemap; sourceTree = "<group>"; };
 		A576E959B109208AFBD1382E7C665823 /* PContributionsView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PContributionsView.release.xcconfig; sourceTree = "<group>"; };
 		ADFB5A700CEA9069B32A3EA2F3DC496F /* Pods-habit-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-habit-frameworks.sh"; sourceTree = "<group>"; };
-		B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JJFloatingActionButton; path = JJFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JJFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8D508F7B8038116ED2EEB4E8EF45085 /* LSHContributionView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LSHContributionView-prefix.pch"; sourceTree = "<group>"; };
 		BA745D1C149448DBD4996F8EB015FBDA /* PContributionsView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PContributionsView.debug.xcconfig; sourceTree = "<group>"; };
 		BAE3855D49525835B984D3817213E575 /* LSHContributionView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LSHContributionView.modulemap; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		CB4376E90EA31CAC49006DAE46CB4B3F /* LSHContributionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LSHContributionView.swift; path = LSHContributionView/LSHContributionView.swift; sourceTree = "<group>"; };
 		CF4EF777FB95726BDBE3C216F7C32DC0 /* LSHContributionView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LSHContributionView.debug.xcconfig; sourceTree = "<group>"; };
 		D8244CEE88134BDCD36F68AB608497F3 /* Pods-habit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-habit-umbrella.h"; sourceTree = "<group>"; };
-		DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LSHContributionView; path = LSHContributionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LSHContributionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD353FA858AB3759E328F4AF816698EF /* JJActionItemTitlePosition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJActionItemTitlePosition.swift; path = Sources/JJActionItemTitlePosition.swift; sourceTree = "<group>"; };
 		DFAC17E35C4C855B7DD30B7CFD8A28A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E1BAC018B06C65C1665726D6F00EBD3A /* AnimationConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationConfiguration.swift; path = Sources/AnimationConfiguration.swift; sourceTree = "<group>"; };
@@ -172,7 +172,6 @@
 				122EBB1AB621B5C3B08D8260DB82A777 /* PContributionsView.swift */,
 				FC3B943F3DDF6307DCB743EF30767BD9 /* Support Files */,
 			);
-			name = PContributionsView;
 			path = PContributionsView;
 			sourceTree = "<group>";
 		};
@@ -215,17 +214,16 @@
 				CB4376E90EA31CAC49006DAE46CB4B3F /* LSHContributionView.swift */,
 				FC0CAF27F13405230A2C8239C3BFB8AB /* Support Files */,
 			);
-			name = LSHContributionView;
 			path = LSHContributionView;
 			sourceTree = "<group>";
 		};
 		92AE62915B87AC567E330E6FFB60EA09 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */,
-				DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView */,
-				3699D01B4398C65D46745DA63B173CD4 /* PContributionsView */,
-				559D9ADDF98224C708DEE2D1058D35ED /* Pods-habit */,
+				B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton.framework */,
+				DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView.framework */,
+				3699D01B4398C65D46745DA63B173CD4 /* PContributionsView.framework */,
+				559D9ADDF98224C708DEE2D1058D35ED /* Pods_habit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -269,7 +267,6 @@
 				EDFA9D45E1A4D8EE6F6449038E223F3D /* UIView+JJFloatingActionButton.swift */,
 				6255BF8F77337B7AC4EB37FF17E82791 /* Support Files */,
 			);
-			name = JJFloatingActionButton;
 			path = JJFloatingActionButton;
 			sourceTree = "<group>";
 		};
@@ -373,7 +370,7 @@
 			);
 			name = LSHContributionView;
 			productName = LSHContributionView;
-			productReference = DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView */;
+			productReference = DD054DB671571F8C60736D6CF45223D1 /* LSHContributionView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5F141AB51D1C63B0DA34CF03D627C247 /* PContributionsView */ = {
@@ -391,7 +388,7 @@
 			);
 			name = PContributionsView;
 			productName = PContributionsView;
-			productReference = 3699D01B4398C65D46745DA63B173CD4 /* PContributionsView */;
+			productReference = 3699D01B4398C65D46745DA63B173CD4 /* PContributionsView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E109C6B6B466F202BA0B94E76B45D72B /* JJFloatingActionButton */ = {
@@ -409,7 +406,7 @@
 			);
 			name = JJFloatingActionButton;
 			productName = JJFloatingActionButton;
-			productReference = B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */;
+			productReference = B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E40CA9AEF797EABB47317FE0550E5309 /* Pods-habit */ = {
@@ -430,7 +427,7 @@
 			);
 			name = "Pods-habit";
 			productName = Pods_habit;
-			productReference = 559D9ADDF98224C708DEE2D1058D35ED /* Pods-habit */;
+			productReference = 559D9ADDF98224C708DEE2D1058D35ED /* Pods_habit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -441,6 +438,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					5F141AB51D1C63B0DA34CF03D627C247 = {
+						LastSwiftMigration = "";
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 12.0";
@@ -582,7 +584,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/LSHContributionView/LSHContributionView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/LSHContributionView/LSHContributionView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -683,7 +685,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -719,7 +721,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-habit/Pods-habit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -755,7 +757,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/JJFloatingActionButton/JJFloatingActionButton-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -790,7 +792,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-habit/Pods-habit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -890,7 +892,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/LSHContributionView/LSHContributionView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/LSHContributionView/LSHContributionView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -924,7 +926,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PContributionsView/PContributionsView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PContributionsView/PContributionsView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -958,7 +960,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/PContributionsView/PContributionsView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/PContributionsView/PContributionsView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

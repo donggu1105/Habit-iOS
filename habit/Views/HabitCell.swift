@@ -77,15 +77,16 @@ class HabitCell: UICollectionViewCell {
         // 잔디 색칠하기
         if let acheiveCount: Int64 = data?.acheiveCount {
             print("acheiveCnt: \(acheiveCount)")
-            let dataActivity = [
-                [2, 2, 3, 4, 2, 1, 1, 1],
-                [2, 2, 3, 4, 2, 1, 1, 1],
-                [2, 2, 3, 4, 2, 1, 1, 1],
-                [2, 2, 3, 4, 2, 1, 1, 1],
-                [2, 2, 3, 4, 2, 1, 1, 1],
-            ]
             
-            contributionView.contrilbutionsData = dataActivity
+//            var dataActivity = [
+//                [0, 0, 0, 0, 0, 0, 0, 0],
+//                [0, 0, 0, 0, 0, 0, 0, 0],
+//                [0, 0, 0, 0, 0, 0, 0, 0],
+//                [0, 0, 0, 0, 0, 0, 0, 0],
+//                [0, 0, 0, 0, 0, 0, 0, 0],
+//            ]
+            
+            contributionView.contrilbutionsData = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(acheiveCount))
             
 //            contributionView.data = LSHContributionView.makeData(acheiveCount: Int(acheiveCount))
 //            colorWithAcheiveCount(acheiveCount: Int(acheiveCnt))
@@ -93,29 +94,5 @@ class HabitCell: UICollectionViewCell {
 
     }
   
-    
-    func colorWithAcheiveCount(acheiveCount: Int) {
-        
-        
-        var iterCnt = 0
-        let x = acheiveCount % Goal.grassX // 나머지
-        let y = acheiveCount / Goal.grassX // 몫
-        
 
-        repeat {
-//            print("acheiveCount: \(acheiveCount)")
-//            print("x: \(x) , y: \(y), iterCnt: \(iterCnt)")
-            if (iterCnt < y) {
-                for color in 0..<Goal.grassX {
-                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 3)
-                }
-            } else {
-//                print("줄바뀜")
-                for color in 0..<x {
-                    contributionView.addEntry(with: CGPoint(x: color, y: iterCnt), level: 3)
-                }
-            }
-            iterCnt += 1
-        } while (iterCnt <= y)
-    }
 }
