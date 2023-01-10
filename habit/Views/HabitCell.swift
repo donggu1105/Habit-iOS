@@ -8,9 +8,7 @@
 import UIKit
 import LSHContributionView
 
-//protocol CellActionDelegate {
-//    func removeCellAtIndex(_ index: Int)
-//}
+
 
 class HabitCell: UICollectionViewCell {
 
@@ -18,11 +16,7 @@ class HabitCell: UICollectionViewCell {
     @IBOutlet weak var contributionView: LSHContributionView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalTitleLabel: UILabel!
-    
-//    var shakeEnabled: Bool!
-    
-//    static var delegate: CellActionDelegate!
-    
+    @IBOutlet weak var createdDateLabel: UILabel!
     
     var data: Habit? {
         didSet {
@@ -58,10 +52,16 @@ class HabitCell: UICollectionViewCell {
     
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
+        print(#function)
         // 잔디 이름
         nameLabel.text = data?.name
         // 목표
         goalTitleLabel.text = data?.goalTitle
+        // 날짜
+        if let createdDate = data?.createdDateStr {
+            createdDateLabel.text = createdDate + "~"
+
+        }
         // 잔디 컨트리뷰션
         contributionView.data = LSHContributionView.makeDefaultSquareData()
         // 잔디 색정하기
@@ -72,8 +72,10 @@ class HabitCell: UICollectionViewCell {
             contributionView.backgroundColor = color.backgoundColor
         }
         // 잔디 색칠하기
-        let acheiveCnt = Int(data?.acheiveCount ?? 0)
-        colorWithAcheiveCount(acheiveCount: acheiveCnt)
+        if let acheiveCnt: Int64 = data?.acheiveCount {
+            print("acheiveCnt: \(acheiveCnt)")
+            colorWithAcheiveCount(acheiveCount: Int(acheiveCnt))
+        }
 
     }
   

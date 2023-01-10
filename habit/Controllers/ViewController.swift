@@ -1,20 +1,21 @@
-//
-//  ViewController.swift
-//  habit
-//
-//  Created by web_dev on 2022/12/29.
-//
+
+
 
 import UIKit
 import StoreKit
 import JJFloatingActionButton
 
+//protocol CallParent {
+//    func collectionReload()
+//}
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     // 코어데이터
     let coreDataManager = CoreDataManager.shared
+    
+
     
     // 화면에 다시 진입할때마다 테이블뷰 리로드
     override func viewWillAppear(_ animated: Bool) {
@@ -23,6 +24,10 @@ class ViewController: UIViewController {
         collectionView.reloadData()
     }
     
+    
+    func collectionReload() {
+        self.collectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +38,7 @@ class ViewController: UIViewController {
         // 콜렉션뷰 셋업
         setUpCollectionView()
         // 롱프레스 버튼 셋업
-        setupLongGestureRecognizerOnCollection()
+//        setupLongGestureRecognizerOnCollection()
         // 플로팅 버튼 셋업
         setUpFloatingButton()
         
@@ -58,15 +63,15 @@ class ViewController: UIViewController {
          actionButton.display(inViewController: self)
     }
     
-    func setupLongGestureRecognizerOnCollection() {
-        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
-        longPressedGesture.minimumPressDuration = 0.5
-        longPressedGesture.delegate = self
-        longPressedGesture.delaysTouchesBegan = true
-        collectionView?.addGestureRecognizer(longPressedGesture)
-        
-    }
-    
+//    func setupLongGestureRecognizerOnCollection() {
+//        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
+//        longPressedGesture.minimumPressDuration = 0.5
+//        longPressedGesture.delegate = self
+//        longPressedGesture.delaysTouchesBegan = true
+//        collectionView?.addGestureRecognizer(longPressedGesture)
+//
+//    }
+//
     
     
     func setUpCollectionView() {

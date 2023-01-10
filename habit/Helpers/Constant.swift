@@ -13,4 +13,7 @@ public struct Goal {
     static let grassX: Int = 7
 }
 
-
+public struct Entity {
+    static let habit: String = "Habit"
+    static let acheive: String = "Acheive"
+}

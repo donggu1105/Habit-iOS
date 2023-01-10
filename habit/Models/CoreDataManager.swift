@@ -22,9 +22,6 @@ final class CoreDataManager {
     // 임시저장소
     lazy var context = appDelegate?.persistentContainer.viewContext
     
-    // 엔터티 이름 (코어데이터에 저장된 객체)
-    let modelName: String = "Habit"
-    
     // MARK: - [Read] 코어데이터에 저장된 데이터 모두 읽어오기
     func getHabitList() -> [Habit] {
 
@@ -33,7 +30,7 @@ final class CoreDataManager {
         // 임시저장소 있는지 확인
         if let context = context {
             // 요청서
-            let request = NSFetchRequest<NSManagedObject>(entityName: self.modelName)
+            let request = NSFetchRequest<NSManagedObject>(entityName: Entity.habit)
             // 정렬순서를 정해서 요청서에 넘겨주기
             let dateOrder = NSSortDescriptor(key: "createdDate", ascending: false)
             request.sortDescriptors = [dateOrder]
@@ -58,12 +55,13 @@ final class CoreDataManager {
         // 임시저장소 있는지 확인
         if let context = context {
             // 임시저장소에 있는 데이터를 그려줄 형태 파악하기
-            if let entity = NSEntityDescription.entity(forEntityName: self.modelName, in: context) {
+            if let entity = NSEntityDescription.entity(forEntityName: Entity.habit, in: context) {
                 
                 // 임시저장소에 올라가게 할 객체만들기 (NSManagedObject ===> ToDoData)
                 if let habit = NSManagedObject(entity: entity, insertInto: context) as? Habit {
                     
                     // MARK: - habit에 실제 데이터 할당 ⭐️
+                    habit.id = UUID().uuidString
                     habit.name = name
                     habit.goalTitle = goalTitle
                     habit.goalCount = goalCount
@@ -89,8 +87,7 @@ final class CoreDataManager {
     
     // MARK: - [Delete] 코어데이터에서 데이터 삭제하기 (일치하는 데이터 찾아서 ===> 삭제)
     func deleteData(data: Habit, completion: @escaping () -> Void) {
-        // 날짜 옵셔널 바인딩
-        guard let date = data.createdDate else {
+        guard let id = data.id else {
             completion()
             return
         }
@@ -98,9 +95,9 @@ final class CoreDataManager {
         // 임시저장소 있는지 확인
         if let context = context {
             // 요청서
-            let request = NSFetchRequest<NSManagedObject>(entityName: self.modelName)
+            let request = NSFetchRequest<NSManagedObject>(entityName: Entity.habit)
             // 단서 / 찾기 위한 조건 설정
-            request.predicate = NSPredicate(format: "createdDate = %@", date as CVarArg)
+            request.predicate = NSPredicate(format: "id = %@", id as CVarArg)
             
             do {
                 // 요청서를 통해서 데이터 가져오기 (조건에 일치하는 데이터 찾기) (fetch메서드)
@@ -132,8 +129,7 @@ final class CoreDataManager {
     
     // MARK: - [Update] 코어데이터에서 데이터 수정하기 (일치하는 데이터 찾아서 ===> 수정)
     func updateData(newData: Habit, completion: @escaping () -> Void) {
-        // 날짜 옵셔널 바인딩
-        guard let date = newData.createdDate else {
+        guard let id = newData.id else {
             completion()
             return
         }
@@ -141,9 +137,9 @@ final class CoreDataManager {
         // 임시저장소 있는지 확인
         if let context = context {
             // 요청서
-            let request = NSFetchRequest<NSManagedObject>(entityName: self.modelName)
+            let request = NSFetchRequest<NSManagedObject>(entityName: Entity.habit)
             // 단서 / 찾기 위한 조건 설정
-            request.predicate = NSPredicate(format: "createdDate = %@", date as CVarArg)
+            request.predicate = NSPredicate(format: "id = %@", id as CVarArg)
             
             do {
                 // 요청서를 통해서 데이터 가져오기

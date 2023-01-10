@@ -111,6 +111,7 @@ class RegisterViewController: UIViewController {
         
         // 기존 데이터 있을때
         if let habit = self.habit {
+            print(habit)
             // 텍스트뷰에 저장되어 있는 메세지
             habit.name = nameTextField.text
             habit.goalTitle = goalTextField.text

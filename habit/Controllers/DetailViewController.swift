@@ -11,13 +11,18 @@ class DetailViewController: UIViewController {
 
     let coreDataManager = CoreDataManager.shared
     
-    var habit: Habit?
-
-//    weak var myParent: CallParent?
-
-    @IBOutlet weak var acheiveButton: UIButton!
+    var habit: Habit? {
+        didSet {
+            configureWithUI()
+        }
+    }
     
-
+    @IBOutlet weak var cheerView: UIView!
+    @IBOutlet weak var cheerLabel: UILabel!
+    
+    @IBOutlet weak var graphBackgroundView: UIView!
+    @IBOutlet weak var circularProgressView: CircularProgressView!
+    @IBOutlet weak var acheiveButton: UIButton!
 
 
     override func viewDidLoad() {
@@ -27,8 +32,19 @@ class DetailViewController: UIViewController {
     
     
     func setUp() {
-
         self.view.backgroundColor = .black
+        // cheer
+        cheerView.backgroundColor = UIColor(hexString: "14171e")
+        cheerView.clipsToBounds = true
+        cheerView.layer.cornerRadius = 8
+        // graph
+        graphBackgroundView.backgroundColor = UIColor(hexString: "14171e")
+        graphBackgroundView.clipsToBounds = true
+        graphBackgroundView.layer.cornerRadius = 8
+        // circularProgressView
+        circularProgressView.backgroundColor = UIColor(hexString: "14171e")
+//        circularProgressView.setprogress(0.4, UIColor.blue, "13", "")
+        circularProgressView.animate(0.9, duration: 2)
         // 버튼
         acheiveButton.clipsToBounds = true
         acheiveButton.layer.cornerRadius = 8
@@ -37,10 +53,21 @@ class DetailViewController: UIViewController {
         
     }
  
+    
+    func configureWithUI() {
+        guard let habit = self.habit else {return}
+        print(habit)
+        let percentStr = Double(habit.acheiveCount / habit.goalCount)
+        print(percentStr)
+//        circularProgressView.setprogress(0.4, UIColor.blue, percentStr, "ff")
+//        circularProgressView.animate(0.9, duration: 2)
+
+        
+    }
     @IBAction func acheiveButtonTapped(_ sender: UIButton) {
         
-        guard let habit = habit else {return}
-        habit.acheiveCount = habit.acheiveCount + 1
+        guard let habit = self.habit else {return}
+        habit.acheiveCount += 1
         
         coreDataManager.updateData(newData: habit, completion: {
             print("업데이트 완료")
