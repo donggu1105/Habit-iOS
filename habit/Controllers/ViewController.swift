@@ -5,9 +5,6 @@ import UIKit
 import StoreKit
 import JJFloatingActionButton
 
-//protocol CallParent {
-//    func collectionReload()
-//}
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,6 +20,11 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        self.collectionView.reloadData()
+//    }
     
     
     func collectionReload() {
@@ -63,15 +65,7 @@ class ViewController: UIViewController {
          actionButton.display(inViewController: self)
     }
     
-//    func setupLongGestureRecognizerOnCollection() {
-//        let longPressedGesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(gestureRecognizer:)))
-//        longPressedGesture.minimumPressDuration = 0.5
-//        longPressedGesture.delegate = self
-//        longPressedGesture.delaysTouchesBegan = true
-//        collectionView?.addGestureRecognizer(longPressedGesture)
-//
-//    }
-//
+
     
     
     func setUpCollectionView() {
@@ -229,20 +223,5 @@ extension ViewController: UICollectionViewDataSource {
     
 }
 
-extension ViewController: UIGestureRecognizerDelegate {
-    
-    @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
-        if (gestureRecognizer.state != .began) {
-            return
-        }
-
-        let p = gestureRecognizer.location(in: collectionView)
-
-        if let indexPath = collectionView?.indexPathForItem(at: p) {
-            print("Long press at item: \(indexPath.row)")
-        }
-    }
-    
-}
 
 

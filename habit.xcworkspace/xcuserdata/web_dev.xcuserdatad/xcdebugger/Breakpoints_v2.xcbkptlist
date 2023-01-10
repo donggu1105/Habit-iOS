@@ -14,8 +14,8 @@
             filePath = "habit/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "setUpCollectionView()"
             landmarkType = "7">
          </BreakpointContent>
