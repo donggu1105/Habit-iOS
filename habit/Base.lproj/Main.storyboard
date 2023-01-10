@@ -131,17 +131,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sr2-ig-aTO">
                                 <rect key="frame" x="20" y="118" width="353" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-XT-IDN">
-                                        <rect key="frame" x="152.66666666666666" y="13" width="48" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYr-Mn-nyL">
+                                        <rect key="frame" x="155.66666666666666" y="14.666666666666657" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="FTe-XT-IDN" firstAttribute="centerX" secondItem="Sr2-ig-aTO" secondAttribute="centerX" id="Nw1-NE-ce6"/>
-                                    <constraint firstItem="FTe-XT-IDN" firstAttribute="centerY" secondItem="Sr2-ig-aTO" secondAttribute="centerY" id="vrt-LV-y9z"/>
+                                    <constraint firstItem="vYr-Mn-nyL" firstAttribute="centerY" secondItem="Sr2-ig-aTO" secondAttribute="centerY" id="IjL-eO-tiF"/>
+                                    <constraint firstItem="vYr-Mn-nyL" firstAttribute="centerX" secondItem="Sr2-ig-aTO" secondAttribute="centerX" id="LjK-0v-QqB"/>
                                     <constraint firstAttribute="height" constant="50" id="xTu-MB-Cid"/>
                                 </constraints>
                             </view>
@@ -149,19 +149,36 @@
                                 <rect key="frame" x="20" y="213" width="353" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJ6-Fw-Loe" customClass="CircularProgressView" customModule="habit" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="70" width="150" height="160"/>
+                                        <rect key="frame" x="10" y="79" width="150" height="191"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="150" id="RFs-MM-GUb"/>
+                                            <constraint firstAttribute="width" constant="150" id="PxZ-hw-TFm"/>
                                         </constraints>
                                     </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTe-XT-IDN">
+                                        <rect key="frame" x="152.66666666666666" y="25" width="48" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjX-ig-ph7">
+                                        <rect key="frame" x="271.66666666666669" y="140" width="41.333333333333314" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="tJ6-Fw-Loe" firstAttribute="top" secondItem="c52-1J-5NG" secondAttribute="top" constant="70" id="8ir-2m-Tke"/>
+                                    <constraint firstItem="tjX-ig-ph7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tJ6-Fw-Loe" secondAttribute="trailing" constant="8" symbolic="YES" id="9As-XP-WLx"/>
+                                    <constraint firstItem="FTe-XT-IDN" firstAttribute="top" secondItem="c52-1J-5NG" secondAttribute="top" constant="25" id="BY4-5D-K8C"/>
+                                    <constraint firstAttribute="bottom" secondItem="tJ6-Fw-Loe" secondAttribute="bottom" constant="30" id="HFU-TJ-cAH"/>
+                                    <constraint firstItem="tjX-ig-ph7" firstAttribute="centerY" secondItem="c52-1J-5NG" secondAttribute="centerY" id="Ooh-GJ-mAz"/>
                                     <constraint firstAttribute="height" constant="300" id="OsV-GS-PQv"/>
-                                    <constraint firstAttribute="bottom" secondItem="tJ6-Fw-Loe" secondAttribute="bottom" constant="70" id="QjG-Nj-Gr3"/>
-                                    <constraint firstItem="tJ6-Fw-Loe" firstAttribute="leading" secondItem="c52-1J-5NG" secondAttribute="leading" constant="10" id="eMu-FL-21B"/>
+                                    <constraint firstItem="tJ6-Fw-Loe" firstAttribute="leading" secondItem="c52-1J-5NG" secondAttribute="leading" constant="10" id="T3C-FR-lZW"/>
+                                    <constraint firstItem="FTe-XT-IDN" firstAttribute="centerX" secondItem="c52-1J-5NG" secondAttribute="centerX" id="Yuo-2Q-DFh"/>
+                                    <constraint firstAttribute="trailing" secondItem="tjX-ig-ph7" secondAttribute="trailing" constant="40" id="nop-FG-7XQ"/>
+                                    <constraint firstItem="tJ6-Fw-Loe" firstAttribute="top" secondItem="FTe-XT-IDN" secondAttribute="bottom" constant="30" id="phJ-Th-U1f"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -182,9 +199,11 @@
                     <navigationItem key="navigationItem" id="qm3-n8-UdO"/>
                     <connections>
                         <outlet property="acheiveButton" destination="V90-b7-Q86" id="4U4-6r-MgK"/>
+                        <outlet property="acheiveCountLabel" destination="tjX-ig-ph7" id="Uoa-rA-QjS"/>
                         <outlet property="cheerLabel" destination="FTe-XT-IDN" id="zuV-we-COg"/>
                         <outlet property="cheerView" destination="Sr2-ig-aTO" id="MxA-on-Jbc"/>
                         <outlet property="circularProgressView" destination="tJ6-Fw-Loe" id="lNQ-Op-Arc"/>
+                        <outlet property="goalTitleLabel" destination="vYr-Mn-nyL" id="QuN-rR-HbD"/>
                         <outlet property="graphBackgroundView" destination="c52-1J-5NG" id="DxD-n8-8Jf"/>
                     </connections>
                 </viewController>

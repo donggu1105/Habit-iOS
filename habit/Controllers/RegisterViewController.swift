@@ -33,6 +33,10 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        colorCollectionView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,24 +115,21 @@ class RegisterViewController: UIViewController {
         
         // 기존 데이터 있을때
         if let habit = self.habit {
-            print(habit)
             // 텍스트뷰에 저장되어 있는 메세지
             habit.name = nameTextField.text
             habit.goalTitle = goalTextField.text
             habit.color = temporaryNum ?? 0
             coreDataManager.updateData(newData: habit, completion: {
                 print("업데이트 완료")
-                // 다시 전화면으로 돌아가기
                 self.navigationController?.popViewController(animated: true)
             })
         } else {
             coreDataManager.saveData(name: nameTextField.text,
                                      goalTitle: goalTextField.text,
-                                     goalCount: Int64(Goal.goalCount),
+                                     goalCount: Int64(ContributionHelper.goalCount),
                                      color: temporaryNum ?? 0,
                                      achieveCount: 0) {
                 print("저장완료")
-                // 다시 전화면으로 돌아가기
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -141,9 +142,6 @@ class RegisterViewController: UIViewController {
 }
 
 extension RegisterViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-    }
-    
     
     
 }
@@ -176,7 +174,6 @@ extension RegisterViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ColorCell.self), for: indexPath) as! ColorCell
-        
         
         let values: [Int64] = MyColor.allCases.map { $0.rawValue }
         

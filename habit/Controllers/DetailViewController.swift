@@ -13,9 +13,11 @@ class DetailViewController: UIViewController {
     
     var habit: Habit?
     
+    @IBOutlet weak var goalTitleLabel: UILabel!
     @IBOutlet weak var cheerView: UIView!
     @IBOutlet weak var cheerLabel: UILabel!
     
+    @IBOutlet weak var acheiveCountLabel: UILabel!
     @IBOutlet weak var graphBackgroundView: UIView!
     @IBOutlet weak var circularProgressView: CircularProgressView!
     @IBOutlet weak var acheiveButton: UIButton!
@@ -30,6 +32,7 @@ class DetailViewController: UIViewController {
     
     func setUp() {
         self.view.backgroundColor = .black
+        // goalTitle
         // cheer
         cheerView.backgroundColor = UIColor(hexString: "14171e")
         cheerView.clipsToBounds = true
@@ -54,15 +57,19 @@ class DetailViewController: UIViewController {
     func configureWithUI() {
         guard let habit = self.habit else {return}
         
+        goalTitleLabel.text = habit.goalTitle
+        acheiveCountLabel.text = "습관 완료 : \(habit.acheiveCount)회"
         
-//        intPercent = Int(habit.percent)
         if let percent = habit.percent {
             cheerLabel.text = CheerUp.ment(percent: Int(percent))
             let percentStr = String(Int(percent)) + "%"
             
-            circularProgressView.setprogress(0.0, UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0), percentStr, "D-\(habit.goalCount - habit.acheiveCount)")
+            circularProgressView.setprogress(0.0, UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0), percentStr, "\(habit.goalCount - habit.acheiveCount)번 남음")
             circularProgressView.animate(Double(percent) / 100, duration: 1)
-            
+        }
+        
+        if (habit.acheiveCount == habit.goalCount) {
+            acheiveButton.setTitle("잔디 완성하기🪴", for: .normal)
         }
 
 

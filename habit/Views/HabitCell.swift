@@ -11,7 +11,7 @@ import PContributionsView
 
 
 
-class HabitCell: UICollectionViewCell {
+final class HabitCell: UICollectionViewCell {
 
     @IBOutlet weak var contributionView: PContributionsView!
     
@@ -56,7 +56,7 @@ class HabitCell: UICollectionViewCell {
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
         print(#function)
-        print(data)
+//        print(data)
         // 잔디 이름
         nameLabel.text = data?.name
         // 목표
@@ -66,10 +66,6 @@ class HabitCell: UICollectionViewCell {
             createdDateLabel.text = createdDate + "~"
 
         }
-        // 잔디 컨트리뷰션
-//        contributionView.data = LSHContributionView.makeDefaultSquareData()
-        // 잔디 색정하기
-//        contributionView.colorScheme = "Default"
         guard let colorNum = data?.color else {return}
         if let color = MyColor(rawValue: colorNum) {
             contentView.backgroundColor = color.backgoundColor
@@ -78,21 +74,9 @@ class HabitCell: UICollectionViewCell {
         // 잔디 색칠하기
         if let acheiveCount: Int64 = data?.acheiveCount {
             print("acheiveCnt: \(acheiveCount)")
-            
-//            var dataActivity = [
-//                [0, 0, 0, 0, 0, 0, 0, 0],
-//                [0, 0, 0, 0, 0, 0, 0, 0],
-//                [0, 0, 0, 0, 0, 0, 0, 0],
-//                [0, 0, 0, 0, 0, 0, 0, 0],
-//                [0, 0, 0, 0, 0, 0, 0, 0],
-//            ]
-            
             let dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(acheiveCount))
-            print(dataSquare)
+            //            print(dataSquare)
             contributionView.contrilbutionsData = dataSquare
-            
-//            contributionView.data = LSHContributionView.makeData(acheiveCount: Int(acheiveCount))
-//            colorWithAcheiveCount(acheiveCount: Int(acheiveCnt))
         }
 
     }
