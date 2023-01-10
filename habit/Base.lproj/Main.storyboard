@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="184" height="196"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t3-3Y-qOV" customClass="LSHContributionView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4t3-3Y-qOV" customClass="PContributionsView" customModule="PContributionsView">
                                                     <rect key="frame" x="5" y="5" width="174" height="115"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
@@ -80,7 +80,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="184" height="196"/>
                                         <connections>
-                                            <outlet property="contributionView" destination="4t3-3Y-qOV" id="8V1-hD-Y3D"/>
+                                            <outlet property="contributionView" destination="4t3-3Y-qOV" id="TBf-nQ-2Fq"/>
                                             <outlet property="createdDateLabel" destination="bd2-o2-oQJ" id="gbF-By-o41"/>
                                             <outlet property="goalTitleLabel" destination="3fd-Zz-PlE" id="At0-mh-rwa"/>
                                             <outlet property="nameLabel" destination="pOd-AR-aLs" id="gnq-EX-dSc"/>

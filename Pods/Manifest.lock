@@ -1,20 +1,24 @@
 PODS:
   - JJFloatingActionButton (2.5.0)
   - LSHContributionView (1.0.0)
+  - PContributionsView (0.1.1)
 
 DEPENDENCIES:
   - JJFloatingActionButton
   - LSHContributionView
+  - PContributionsView
 
 SPEC REPOS:
   trunk:
     - JJFloatingActionButton
     - LSHContributionView
+    - PContributionsView
 
 SPEC CHECKSUMS:
   JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
   LSHContributionView: 8b523e7e8c54159d1ba984fad99970ea3cb0f140
+  PContributionsView: 504fba97403ea9f394b757818bbe6255534eac9e
 
-PODFILE CHECKSUM: 00d1dedf8d2069325816447133528def9480cde5
+PODFILE CHECKSUM: d3c15eaddc306c38bea1fa8f41d913e36b502a0a
 
 COCOAPODS: 1.11.3

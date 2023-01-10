@@ -6,6 +6,8 @@ target 'habit' do
   use_frameworks!
   pod 'LSHContributionView'
   pod 'JJFloatingActionButton'
+  pod 'PContributionsView'
   # Pods for habit
+
 
 end

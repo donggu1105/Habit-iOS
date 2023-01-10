@@ -6,14 +6,15 @@
 //
 
 import UIKit
-import LSHContributionView
+//import LSHContributionView
+import PContributionsView
 
 
 
 class HabitCell: UICollectionViewCell {
 
+    @IBOutlet weak var contributionView: PContributionsView!
     
-    @IBOutlet weak var contributionView: LSHContributionView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalTitleLabel: UILabel!
     @IBOutlet weak var createdDateLabel: UILabel!
@@ -43,9 +44,11 @@ class HabitCell: UICollectionViewCell {
         contributionView.clipsToBounds = true
         contributionView.backgroundColor = UIColor(hexString: "14171e")
         contributionView.layer.cornerRadius = 10
-//        contributionView.layer.borderWidth = 1
-        contributionView.gridSpacing = 3
-        contributionView.gridMargin = 10
+        contributionView.cellCornerRadius(2)
+        contributionView.spacing = 3
+
+//        contributionView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
+
         
     }
 
@@ -63,18 +66,29 @@ class HabitCell: UICollectionViewCell {
 
         }
         // 잔디 컨트리뷰션
-        contributionView.data = LSHContributionView.makeDefaultSquareData()
+//        contributionView.data = LSHContributionView.makeDefaultSquareData()
         // 잔디 색정하기
-        contributionView.colorScheme = "Default"
+//        contributionView.colorScheme = "Default"
         guard let colorNum = data?.color else {return}
         if let color = MyColor(rawValue: colorNum) {
             contentView.backgroundColor = color.backgoundColor
             contributionView.backgroundColor = color.backgoundColor
         }
         // 잔디 색칠하기
-        if let acheiveCnt: Int64 = data?.acheiveCount {
-            print("acheiveCnt: \(acheiveCnt)")
-            colorWithAcheiveCount(acheiveCount: Int(acheiveCnt))
+        if let acheiveCount: Int64 = data?.acheiveCount {
+            print("acheiveCnt: \(acheiveCount)")
+            let dataActivity = [
+                [2, 2, 3, 4, 2, 1, 1, 1],
+                [2, 2, 3, 4, 2, 1, 1, 1],
+                [2, 2, 3, 4, 2, 1, 1, 1],
+                [2, 2, 3, 4, 2, 1, 1, 1],
+                [2, 2, 3, 4, 2, 1, 1, 1],
+            ]
+            
+            contributionView.contrilbutionsData = dataActivity
+            
+//            contributionView.data = LSHContributionView.makeData(acheiveCount: Int(acheiveCount))
+//            colorWithAcheiveCount(acheiveCount: Int(acheiveCnt))
         }
 
     }
