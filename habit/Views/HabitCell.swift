@@ -56,6 +56,7 @@ class HabitCell: UICollectionViewCell {
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
         print(#function)
+        print(data)
         // 잔디 이름
         nameLabel.text = data?.name
         // 목표
@@ -86,7 +87,9 @@ class HabitCell: UICollectionViewCell {
 //                [0, 0, 0, 0, 0, 0, 0, 0],
 //            ]
             
-            contributionView.contrilbutionsData = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(acheiveCount))
+            let dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(acheiveCount))
+            print(dataSquare)
+            contributionView.contrilbutionsData = dataSquare
             
 //            contributionView.data = LSHContributionView.makeData(acheiveCount: Int(acheiveCount))
 //            colorWithAcheiveCount(acheiveCount: Int(acheiveCnt))

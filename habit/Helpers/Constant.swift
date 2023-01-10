@@ -10,7 +10,6 @@ import UIKit
 // 사용하게될 API 문자열 묶음
 public struct Goal {
     static let goalCount: Int = 35
-    static let grassX: Int = 7
 }
 
 public struct Entity {

@@ -35,9 +35,7 @@ extension Habit {
     }
     
     var percent: Double? {
-        var percent = Double(self.acheiveCount) / Double(self.goalCount) * 100
-        
-        
+        let percent = Double(self.acheiveCount) / Double(self.goalCount) * 100
         return percent
     }
 
