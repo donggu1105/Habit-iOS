@@ -32,6 +32,11 @@ extension Habit {
         let savedDateString = myFormatter.string(from: date)
         return savedDateString
     }
+    
+    var percent: Double? {
+        let percent = Double(self.acheiveCount) / Double(self.goalCount) * 100
+        return percent
+    }
 
 }
 

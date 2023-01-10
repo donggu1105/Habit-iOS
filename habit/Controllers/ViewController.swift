@@ -82,9 +82,6 @@ class ViewController: UIViewController {
         collectionView.delegate = self
         // 컴포지셔널 레이아웃 설정
         collectionView.collectionViewLayout = createCompositionalLayout()
-
-        
-            
     }
    
     

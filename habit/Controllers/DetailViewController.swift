@@ -11,11 +11,7 @@ class DetailViewController: UIViewController {
 
     let coreDataManager = CoreDataManager.shared
     
-    var habit: Habit? {
-        didSet {
-            configureWithUI()
-        }
-    }
+    var habit: Habit?
     
     @IBOutlet weak var cheerView: UIView!
     @IBOutlet weak var cheerLabel: UILabel!
@@ -28,6 +24,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
+        configureWithUI()
     }
     
     
@@ -56,11 +53,18 @@ class DetailViewController: UIViewController {
     
     func configureWithUI() {
         guard let habit = self.habit else {return}
-        print(habit)
-        let percentStr = Double(habit.acheiveCount / habit.goalCount)
-        print(percentStr)
-//        circularProgressView.setprogress(0.4, UIColor.blue, percentStr, "ff")
-//        circularProgressView.animate(0.9, duration: 2)
+        
+        
+//        intPercent = Int(habit.percent)
+        if let percent = habit.percent {
+            cheerLabel.text = CheerUp.ment(percent: Int(percent))
+            let percentStr = String(Int(percent)) + "%"
+            
+            circularProgressView.setprogress(0.0, UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0), percentStr, "D-\(habit.goalCount - habit.acheiveCount)")
+            circularProgressView.animate(percent / 100, duration: 1)
+            
+        }
+
 
         
     }
