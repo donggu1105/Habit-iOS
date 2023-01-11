@@ -20,13 +20,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         collectionView.reloadData()
     }
-    
 
-    
-    
-    func collectionReload() {
-        self.collectionView.reloadData()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
