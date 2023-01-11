@@ -89,10 +89,12 @@ class DetailViewController: UIViewController {
         habit.acheiveCount += 1
         
         coreDataManager.updateData(newData: habit, completion: {
-            print("업데이트 완료")
-            // 다시 전화면으로 돌아가기
-            self.navigationController?.popViewController(animated: true)
+            print("habit 업데이트 완료")
+            self.coreDataManager.saveAcheiveData(habit: habit, memo: "test") {
+                print("acheive 업데이트 완료")
 
+                self.navigationController?.popViewController(animated: true)
+            }
         })
 
     }

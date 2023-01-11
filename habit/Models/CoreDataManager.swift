@@ -44,9 +44,6 @@ final class CoreDataManager {
                 print("가져오는 것 실패")
             }
         }
-        
-        
-        
         return habits
     }
     
@@ -170,4 +167,70 @@ final class CoreDataManager {
             }
         }
     }
+    
+    
+    
+    // MARK: - [Create] 코어데이터에 데이터 생성하기
+    func saveAcheiveData(habit:Habit?, memo: String?, completion: @escaping () -> Void) {
+        // 임시저장소 있는지 확인
+        if let context = context {
+            // 임시저장소에 있는 데이터를 그려줄 형태 파악하기
+            if let entity = NSEntityDescription.entity(forEntityName: Entity.acheive, in: context) {
+                
+                // 임시저장소에 올라가게 할 객체만들기 (NSManagedObject ===> ToDoData)
+                if let acheive = NSManagedObject(entity: entity, insertInto: context) as? Acheive {
+                    
+                    // MARK: - habit에 실제 데이터 할당 ⭐️
+                    acheive.id = UUID().uuidString
+                    acheive.memo = memo
+                    acheive.habit = habit
+                    acheive.level = 3
+                    acheive.createdDate = Date()
+                    
+                    //appDelegate?.saveContext() // 앱델리게이트의 메서드로 해도됨
+                    if context.hasChanges {
+                        do {
+                            try context.save()
+                            completion()
+                        } catch {
+                            print(error)
+                            completion()
+                        }
+                    }
+                }
+            }
+        }
+        completion()
+    }
+    
+    // MARK: - [Read] 코어데이터에 저장된 데이터 모두 읽어오기
+    func getAcheiveList(habit: Habit) -> [Acheive] {
+        var datas: [Acheive] = []
+        // 임시저장소 있는지 확인
+        if let context = context {
+            // 요청서
+            let request = NSFetchRequest<NSManagedObject>(entityName: Entity.acheive)
+            if let habitId = habit.id {
+                request.predicate = NSPredicate(format: "habit.id = %@", habitId as CVarArg)
+            }
+//            request.predicate = NSPredicate(format: "id = %@", id as CVarArg)
+
+//            let bookPersonPredicate = NSPredicate(format: "personRel.idPerson == %@", person.idPerson)
+
+            // 정렬순서를 정해서 요청서에 넘겨주기
+            let dateOrder = NSSortDescriptor(key: "createdDate", ascending: false)
+            request.sortDescriptors = [dateOrder]
+            
+            do {
+                // 임시저장소에서 (요청서를 통해서) 데이터 가져오기 (fetch메서드)
+                if let fetchedList = try context.fetch(request) as? [Acheive] {
+                    datas = fetchedList
+                }
+            } catch {
+                print("가져오는 것 실패")
+            }
+        }
+        return datas
+    }
+    
 }

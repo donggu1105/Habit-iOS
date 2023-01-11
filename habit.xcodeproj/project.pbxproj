@@ -12,7 +12,8 @@
 		60394B64296E3633007DAAA4 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */; };
 		60394B66296E3633007DAAA4 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B5F296E3633007DAAA4 /* Habit+CoreDataProperties.swift */; };
 		60394B68296E4C5B007DAAA4 /* AcheiveDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B67296E4C5B007DAAA4 /* AcheiveDetailController.swift */; };
-		60394B6C296E5390007DAAA4 /* Acheive+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B6B296E5390007DAAA4 /* Acheive+CoreDataProperties.swift */; };
+		60394B6F296E5453007DAAA4 /* Acheive+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B6E296E5453007DAAA4 /* Acheive+CoreDataClass.swift */; };
+		60394B70296E5453007DAAA4 /* Acheive+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B6D296E5453007DAAA4 /* Acheive+CoreDataProperties.swift */; };
 		605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D0296B9E5200A2B87E /* ColorCell.swift */; };
 		605516D3296BA51500A2B87E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D2296BA51500A2B87E /* UIColor+Extension.swift */; };
 		6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD36295D327000EC4791 /* AppDelegate.swift */; };
@@ -38,7 +39,8 @@
 		60394B5F296E3633007DAAA4 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataProperties.swift"; path = "../Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataClass.swift"; path = "../Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
 		60394B67296E4C5B007DAAA4 /* AcheiveDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveDetailController.swift; sourceTree = "<group>"; };
-		60394B6B296E5390007DAAA4 /* Acheive+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataProperties.swift"; path = "../Acheive+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		60394B6D296E5453007DAAA4 /* Acheive+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataProperties.swift"; path = "../../Acheive+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		60394B6E296E5453007DAAA4 /* Acheive+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataClass.swift"; path = "../../Acheive+CoreDataClass.swift"; sourceTree = "<group>"; };
 		605516D0296B9E5200A2B87E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		605516D2296BA51500A2B87E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		6055BD33295D327000EC4791 /* habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +138,8 @@
 		6055BD4E295D392500EC4791 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				60394B6B296E5390007DAAA4 /* Acheive+CoreDataProperties.swift */,
+				60394B6E296E5453007DAAA4 /* Acheive+CoreDataClass.swift */,
+				60394B6D296E5453007DAAA4 /* Acheive+CoreDataProperties.swift */,
 				60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */,
 				60394B5F296E3633007DAAA4 /* Habit+CoreDataProperties.swift */,
 				6055BD58295D4BD900EC4791 /* CoreDataManager.swift */,
@@ -291,8 +294,9 @@
 			files = (
 				6055BD63295D787800EC4791 /* DetailViewController.swift in Sources */,
 				60AF535E296BFD7C005B8F1B /* Constant.swift in Sources */,
-				60394B6C296E5390007DAAA4 /* Acheive+CoreDataProperties.swift in Sources */,
 				6055BD3B295D327000EC4791 /* ViewController.swift in Sources */,
+				60394B6F296E5453007DAAA4 /* Acheive+CoreDataClass.swift in Sources */,
+				60394B70296E5453007DAAA4 /* Acheive+CoreDataProperties.swift in Sources */,
 				6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */,
 				6098CC5E2963F09B0077D828 /* MyColor.swift in Sources */,
 				60394B64296E3633007DAAA4 /* Habit+CoreDataClass.swift in Sources */,

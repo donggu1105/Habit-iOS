@@ -1,32 +1,38 @@
-//
-//  AcheiveDetailController.swift
-//  habit
-//
-//  Created by web_dev on 2023/01/11.
-//
+
 
 import UIKit
 
 class AcheiveDetailController: UIViewController {
     
     var habit: Habit?
+    
+    let coreDataManager = CoreDataManager.shared
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
+        configureWithUI()
+
+    }
+    
+    func setUp() {
         self.view.backgroundColor = .black
+
+    }
+    
+    func configureWithUI() {
+        
+        guard let habit = self.habit else { return }
+        
+        print(coreDataManager.getAcheiveList(habit: habit)[0].memo
+        )
         // Do any additional setup after loading the view.
+        
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -22,4 +22,11 @@ extension Acheive {
     @NSManaged public var memo: String?
     @NSManaged public var habit: Habit?
 
+    var createdDateStr: String? {
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "yyyy-MM-dd"
+        guard let date = self.createdDate else { return "" }
+        let savedDateString = myFormatter.string(from: date)
+        return savedDateString
+    }
 }
