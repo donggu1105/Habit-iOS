@@ -25,9 +25,9 @@ class AcheiveDetailController: UIViewController {
     func configureWithUI() {
         
         guard let habit = self.habit else { return }
-        
-        print(coreDataManager.getAcheiveList(habit: habit)[0].memo
-        )
+        print(print(coreDataManager.getAcheiveList(habit: habit)))
+//        print(coreDataManager.getAcheiveList(habit: habit)[0].memo
+//        )
         // Do any additional setup after loading the view.
         
     }

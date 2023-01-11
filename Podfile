@@ -7,6 +7,7 @@ target 'habit' do
   pod 'LSHContributionView'
   pod 'JJFloatingActionButton'
   pod 'PContributionsView'
+  pod 'SwiftEntryKit', '2.0.0'
   # Pods for habit
 
 

@@ -14,6 +14,9 @@
 		60394B68296E4C5B007DAAA4 /* AcheiveDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B67296E4C5B007DAAA4 /* AcheiveDetailController.swift */; };
 		60394B6F296E5453007DAAA4 /* Acheive+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B6E296E5453007DAAA4 /* Acheive+CoreDataClass.swift */; };
 		60394B70296E5453007DAAA4 /* Acheive+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B6D296E5453007DAAA4 /* Acheive+CoreDataProperties.swift */; };
+		60394B74296E7A55007DAAA4 /* FormFieldPresetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B73296E7A55007DAAA4 /* FormFieldPresetFactory.swift */; };
+		60394B76296E7A9A007DAAA4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B75296E7A9A007DAAA4 /* Font.swift */; };
+		60394B78296E7E88007DAAA4 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B77296E7E88007DAAA4 /* UIColor+Utils.swift */; };
 		605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D0296B9E5200A2B87E /* ColorCell.swift */; };
 		605516D3296BA51500A2B87E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D2296BA51500A2B87E /* UIColor+Extension.swift */; };
 		6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD36295D327000EC4791 /* AppDelegate.swift */; };
@@ -41,6 +44,9 @@
 		60394B67296E4C5B007DAAA4 /* AcheiveDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveDetailController.swift; sourceTree = "<group>"; };
 		60394B6D296E5453007DAAA4 /* Acheive+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataProperties.swift"; path = "../../Acheive+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60394B6E296E5453007DAAA4 /* Acheive+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataClass.swift"; path = "../../Acheive+CoreDataClass.swift"; sourceTree = "<group>"; };
+		60394B73296E7A55007DAAA4 /* FormFieldPresetFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFieldPresetFactory.swift; sourceTree = "<group>"; };
+		60394B75296E7A9A007DAAA4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		60394B77296E7E88007DAAA4 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		605516D0296B9E5200A2B87E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		605516D2296BA51500A2B87E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		6055BD33295D327000EC4791 /* habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +171,9 @@
 				60AF535B296BED74005B8F1B /* UITextField+Extension.swift */,
 				60AF535D296BFD7C005B8F1B /* Constant.swift */,
 				60394B55296CFEEC007DAAA4 /* CircularProgressView.swift */,
+				60394B73296E7A55007DAAA4 /* FormFieldPresetFactory.swift */,
+				60394B75296E7A9A007DAAA4 /* Font.swift */,
+				60394B77296E7E88007DAAA4 /* UIColor+Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -302,14 +311,17 @@
 				60394B64296E3633007DAAA4 /* Habit+CoreDataClass.swift in Sources */,
 				60394B68296E4C5B007DAAA4 /* AcheiveDetailController.swift in Sources */,
 				609CD2E7296683D200953336 /* ContributionHelper.swift in Sources */,
+				60394B78296E7E88007DAAA4 /* UIColor+Utils.swift in Sources */,
 				60AF535C296BED75005B8F1B /* UITextField+Extension.swift in Sources */,
 				6055BD41295D327000EC4791 /* habit.xcdatamodeld in Sources */,
 				605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */,
+				60394B74296E7A55007DAAA4 /* FormFieldPresetFactory.swift in Sources */,
 				6055BD39295D327000EC4791 /* SceneDelegate.swift in Sources */,
 				605516D3296BA51500A2B87E /* UIColor+Extension.swift in Sources */,
 				609CD2EC2967AFA300953336 /* HabitCell.swift in Sources */,
 				60394B56296CFEEC007DAAA4 /* CircularProgressView.swift in Sources */,
 				60394B66296E3633007DAAA4 /* Habit+CoreDataProperties.swift in Sources */,
+				60394B76296E7A9A007DAAA4 /* Font.swift in Sources */,
 				6055BD61295D6F4700EC4791 /* RegisterViewController.swift in Sources */,
 				6055BD59295D4BD900EC4791 /* CoreDataManager.swift in Sources */,
 				609CD2EE2967B74100953336 /* SKStoreReviewController+Extension.swift in Sources */,

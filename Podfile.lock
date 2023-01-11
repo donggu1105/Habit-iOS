@@ -2,23 +2,27 @@ PODS:
   - JJFloatingActionButton (2.5.0)
   - LSHContributionView (1.0.0)
   - PContributionsView (0.1.1)
+  - SwiftEntryKit (2.0.0)
 
 DEPENDENCIES:
   - JJFloatingActionButton
   - LSHContributionView
   - PContributionsView
+  - SwiftEntryKit (= 2.0.0)
 
 SPEC REPOS:
   trunk:
     - JJFloatingActionButton
     - LSHContributionView
     - PContributionsView
+    - SwiftEntryKit
 
 SPEC CHECKSUMS:
   JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
   LSHContributionView: 8b523e7e8c54159d1ba984fad99970ea3cb0f140
   PContributionsView: 504fba97403ea9f394b757818bbe6255534eac9e
+  SwiftEntryKit: 61b5fa36f34a97dd8013e48a7345bc4c4720be9a
 
-PODFILE CHECKSUM: d3c15eaddc306c38bea1fa8f41d913e36b502a0a
+PODFILE CHECKSUM: 36bb1ad061ffb15ac52eb08a7b8f25475c6d3236
 
 COCOAPODS: 1.11.3
