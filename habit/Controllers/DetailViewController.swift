@@ -65,7 +65,6 @@ class DetailViewController: UIViewController {
         
         if let createdDate = habit.createdDateStr {
             createdDateLabel.text = createdDate + "~"
-
         }
         
         if let percent = habit.percent {
@@ -76,6 +75,10 @@ class DetailViewController: UIViewController {
             circularProgressView.animate(Double(percent) / 100, duration: 1)
         }
         
+//        if (coreDataManager.isCheckedToday(habit: habit)) {
+//            acheiveButton.isEnabled = false
+//            acheiveButton.setTitle("오늘은 완료했어요!", for: .normal)
+//        }
         
         if (habit.acheiveCount == habit.goalCount) {
             acheiveButton.setTitle("잔디 완성하기🪴", for: .normal)
