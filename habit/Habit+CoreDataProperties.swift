@@ -2,7 +2,7 @@
 //  Habit+CoreDataProperties.swift
 //  
 //
-//  Created by 강동현 on 2023/01/10.
+//  Created by web_dev on 2023/01/11.
 //
 //
 
@@ -23,8 +23,8 @@ extension Habit {
     @NSManaged public var goalTitle: String?
     @NSManaged public var id: String?
     @NSManaged public var name: String?
+    @NSManaged public var isAcheived: Bool
     @NSManaged public var acheive: NSOrderedSet?
-    
     
     var createdDateStr: String? {
         let myFormatter = DateFormatter()

@@ -9,6 +9,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    
     let coreDataManager = CoreDataManager.shared
     
     var habit: Habit?
@@ -17,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var cheerView: UIView!
     @IBOutlet weak var cheerLabel: UILabel!
     
+    @IBOutlet weak var createdDateLabel: UILabel!
     @IBOutlet weak var acheiveCountLabel: UILabel!
     @IBOutlet weak var graphBackgroundView: UIView!
     @IBOutlet weak var circularProgressView: CircularProgressView!
@@ -57,8 +59,13 @@ class DetailViewController: UIViewController {
     func configureWithUI() {
         guard let habit = self.habit else {return}
         
-        goalTitleLabel.text = habit.goalTitle
+        goalTitleLabel.text = "목표: \(habit.goalTitle!)"
         acheiveCountLabel.text = "습관 완료 : \(habit.acheiveCount)회"
+        
+        if let createdDate = habit.createdDateStr {
+            createdDateLabel.text = createdDate + "~"
+
+        }
         
         if let percent = habit.percent {
             cheerLabel.text = CheerUp.ment(percent: Int(percent))
@@ -67,6 +74,7 @@ class DetailViewController: UIViewController {
             circularProgressView.setprogress(0.0, UIColor(red:0.14, green:0.60, blue:0.23, alpha:1.0), percentStr, "\(habit.goalCount - habit.acheiveCount)번 남음")
             circularProgressView.animate(Double(percent) / 100, duration: 1)
         }
+        
         
         if (habit.acheiveCount == habit.goalCount) {
             acheiveButton.setTitle("잔디 완성하기🪴", for: .normal)

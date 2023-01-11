@@ -17,7 +17,6 @@ final class HabitCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalTitleLabel: UILabel!
-    @IBOutlet weak var createdDateLabel: UILabel!
     
     var data: Habit? {
         didSet {
@@ -56,16 +55,11 @@ final class HabitCell: UICollectionViewCell {
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
         print(#function)
-//        print(data)
         // 잔디 이름
         nameLabel.text = data?.name
         // 목표
         goalTitleLabel.text = data?.goalTitle
-        // 날짜
-        if let createdDate = data?.createdDateStr {
-            createdDateLabel.text = createdDate + "~"
 
-        }
         guard let colorNum = data?.color else {return}
         if let color = MyColor(rawValue: colorNum) {
             contentView.backgroundColor = color.backgoundColor

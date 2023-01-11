@@ -4,6 +4,7 @@
         <attribute name="createdDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="level" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="memo" optional="YES" attributeType="String"/>
         <relationship name="habit" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Habit" inverseName="acheive" inverseEntity="Habit"/>
     </entity>
     <entity name="Habit" representedClassName="Habit" syncable="YES">
@@ -13,6 +14,7 @@
         <attribute name="goalCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="goalTitle" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="isAcheived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="acheive" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Acheive" inverseName="habit" inverseEntity="Acheive"/>
     </entity>

@@ -96,11 +96,7 @@ class ViewController: UIViewController {
     
     // (세그웨이를 실행할때) 실제 데이터 전달 (ToDoData전달)
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "detail" {
-            let detailVC = segue.destination as! DetailViewController
-            guard let indexPath = sender as? IndexPath else { return }
-            detailVC.habit = coreDataManager.getHabitList()[indexPath.row]
-        } else if segue.identifier == "register" {
+        if segue.identifier == "register" {
             let registerVC = segue.destination as! RegisterViewController
             guard let indexPath = sender as? IndexPath else { return }
             registerVC.habit = coreDataManager.getHabitList()[indexPath.row]
@@ -156,7 +152,37 @@ extension ViewController: UICollectionViewDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "detail", sender: indexPath)
+        let storyboardName = "Main"
+        let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
+        // detail
+        let vc1StoryboardID = String(describing: DetailViewController.self)
+        let vc1 = storyboard.instantiateViewController(identifier: vc1StoryboardID) as! DetailViewController
+        vc1.title = ""
+        vc1.habit = coreDataManager.getHabitList()[indexPath.row]
+
+        // acheive detail
+        let vc2StoryboardID = String(describing: AcheiveDetailController.self)
+        let vc2 = storyboard.instantiateViewController(identifier: vc2StoryboardID) as! AcheiveDetailController
+        vc2.habit = coreDataManager.getHabitList()[indexPath.row]
+
+
+        let tabVC = UITabBarController()
+        tabVC.setViewControllers([vc1,vc2], animated: false)
+//        tabVC.modalPresentationStyle = .fullScreen
+        tabVC.tabBar.backgroundColor = .black
+        
+        // 탭바 이미지 설정 (이미지는 애플이 제공하는 것으로 사용)
+        guard let items = tabVC.tabBar.items else { return }
+        
+        items[0].image = UIImage(systemName: "leaf")
+        items[1].image = UIImage(systemName: "waveform.and.magnifyingglass")
+//        items[2].image = UIImage(systemName: "paperplane")
+//        items[3].image = UIImage(systemName: "doc")
+//        items[4].image = UIImage(systemName: "note")
+        
+        
+        self.navigationController?.pushViewController(tabVC, animated: true)
+            
     }
     
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {

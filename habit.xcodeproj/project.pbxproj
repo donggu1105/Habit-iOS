@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		070E7B32296D93A100423E29 /* Acheive+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E7B30296D93A100423E29 /* Acheive+CoreDataProperties.swift */; };
-		070E7B33296D93A100423E29 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E7B2E296D93A100423E29 /* Habit+CoreDataClass.swift */; };
-		070E7B34296D93A100423E29 /* Acheive+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E7B2F296D93A100423E29 /* Acheive+CoreDataClass.swift */; };
-		070E7B35296D93A100423E29 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E7B31296D93A100423E29 /* Habit+CoreDataProperties.swift */; };
 		2EF6DC19EB9A086AE5D75F0D /* Pods_habit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7427A406C09971717B6C2CBB /* Pods_habit.framework */; };
 		60394B56296CFEEC007DAAA4 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B55296CFEEC007DAAA4 /* CircularProgressView.swift */; };
+		60394B64296E3633007DAAA4 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */; };
+		60394B66296E3633007DAAA4 /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B5F296E3633007DAAA4 /* Habit+CoreDataProperties.swift */; };
+		60394B68296E4C5B007DAAA4 /* AcheiveDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B67296E4C5B007DAAA4 /* AcheiveDetailController.swift */; };
+		60394B6C296E5390007DAAA4 /* Acheive+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B6B296E5390007DAAA4 /* Acheive+CoreDataProperties.swift */; };
 		605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D0296B9E5200A2B87E /* ColorCell.swift */; };
 		605516D3296BA51500A2B87E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D2296BA51500A2B87E /* UIColor+Extension.swift */; };
 		6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD36295D327000EC4791 /* AppDelegate.swift */; };
@@ -34,11 +34,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		070E7B2E296D93A100423E29 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataClass.swift"; path = "../../Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
-		070E7B2F296D93A100423E29 /* Acheive+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataClass.swift"; path = "../../Acheive+CoreDataClass.swift"; sourceTree = "<group>"; };
-		070E7B30296D93A100423E29 /* Acheive+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataProperties.swift"; path = "../../Acheive+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		070E7B31296D93A100423E29 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataProperties.swift"; path = "../../Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60394B55296CFEEC007DAAA4 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		60394B5F296E3633007DAAA4 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataProperties.swift"; path = "../Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataClass.swift"; path = "../Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		60394B67296E4C5B007DAAA4 /* AcheiveDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveDetailController.swift; sourceTree = "<group>"; };
+		60394B6B296E5390007DAAA4 /* Acheive+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Acheive+CoreDataProperties.swift"; path = "../Acheive+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		605516D0296B9E5200A2B87E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		605516D2296BA51500A2B87E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		6055BD33295D327000EC4791 /* habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +128,7 @@
 				6055BD60295D6F4700EC4791 /* RegisterViewController.swift */,
 				6055BD62295D787800EC4791 /* DetailViewController.swift */,
 				609CD2ED2967B74100953336 /* SKStoreReviewController+Extension.swift */,
+				60394B67296E4C5B007DAAA4 /* AcheiveDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -135,10 +136,9 @@
 		6055BD4E295D392500EC4791 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				070E7B31296D93A100423E29 /* Habit+CoreDataProperties.swift */,
-				070E7B2E296D93A100423E29 /* Habit+CoreDataClass.swift */,
-				070E7B2F296D93A100423E29 /* Acheive+CoreDataClass.swift */,
-				070E7B30296D93A100423E29 /* Acheive+CoreDataProperties.swift */,
+				60394B6B296E5390007DAAA4 /* Acheive+CoreDataProperties.swift */,
+				60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */,
+				60394B5F296E3633007DAAA4 /* Habit+CoreDataProperties.swift */,
 				6055BD58295D4BD900EC4791 /* CoreDataManager.swift */,
 			);
 			path = Models;
@@ -291,21 +291,21 @@
 			files = (
 				6055BD63295D787800EC4791 /* DetailViewController.swift in Sources */,
 				60AF535E296BFD7C005B8F1B /* Constant.swift in Sources */,
+				60394B6C296E5390007DAAA4 /* Acheive+CoreDataProperties.swift in Sources */,
 				6055BD3B295D327000EC4791 /* ViewController.swift in Sources */,
 				6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */,
-				070E7B35296D93A100423E29 /* Habit+CoreDataProperties.swift in Sources */,
-				070E7B32296D93A100423E29 /* Acheive+CoreDataProperties.swift in Sources */,
 				6098CC5E2963F09B0077D828 /* MyColor.swift in Sources */,
+				60394B64296E3633007DAAA4 /* Habit+CoreDataClass.swift in Sources */,
+				60394B68296E4C5B007DAAA4 /* AcheiveDetailController.swift in Sources */,
 				609CD2E7296683D200953336 /* ContributionHelper.swift in Sources */,
 				60AF535C296BED75005B8F1B /* UITextField+Extension.swift in Sources */,
-				070E7B34296D93A100423E29 /* Acheive+CoreDataClass.swift in Sources */,
 				6055BD41295D327000EC4791 /* habit.xcdatamodeld in Sources */,
 				605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */,
 				6055BD39295D327000EC4791 /* SceneDelegate.swift in Sources */,
-				070E7B33296D93A100423E29 /* Habit+CoreDataClass.swift in Sources */,
 				605516D3296BA51500A2B87E /* UIColor+Extension.swift in Sources */,
 				609CD2EC2967AFA300953336 /* HabitCell.swift in Sources */,
 				60394B56296CFEEC007DAAA4 /* CircularProgressView.swift in Sources */,
+				60394B66296E3633007DAAA4 /* Habit+CoreDataProperties.swift in Sources */,
 				6055BD61295D6F4700EC4791 /* RegisterViewController.swift in Sources */,
 				6055BD59295D4BD900EC4791 /* CoreDataManager.swift in Sources */,
 				609CD2EE2967B74100953336 /* SKStoreReviewController+Extension.swift in Sources */,
