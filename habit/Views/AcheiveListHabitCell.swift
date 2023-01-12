@@ -10,13 +10,12 @@ import PContributionsView
 
 
 
-final class HabitCell: UICollectionViewCell {
+final class AcheiveListHabitCell: UICollectionViewCell {
 
     @IBOutlet weak var contributionView: PContributionsView!
     
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalTitleLabel: UILabel!
-    
+    @IBOutlet weak var nameLabel: UILabel!
     var data: Habit? {
         didSet {
             configureUIwithData()

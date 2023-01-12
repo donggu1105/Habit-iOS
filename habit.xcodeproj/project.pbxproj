@@ -20,6 +20,7 @@
 		60394B7A296E9DF3007DAAA4 /* AcheiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B79296E9DF3007DAAA4 /* AcheiveCell.swift */; };
 		60394B7D296F7F47007DAAA4 /* soguem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60394B7C296F7F46007DAAA4 /* soguem.ttf */; };
 		60394B7F296F9043007DAAA4 /* AcheiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B7E296F9043007DAAA4 /* AcheiveListViewController.swift */; };
+		60394B81296F9B03007DAAA4 /* AcheiveListHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B80296F9B03007DAAA4 /* AcheiveListHabitCell.swift */; };
 		605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D0296B9E5200A2B87E /* ColorCell.swift */; };
 		605516D3296BA51500A2B87E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D2296BA51500A2B87E /* UIColor+Extension.swift */; };
 		6055BD37295D327000EC4791 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6055BD36295D327000EC4791 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		60394B79296E9DF3007DAAA4 /* AcheiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveCell.swift; sourceTree = "<group>"; };
 		60394B7C296F7F46007DAAA4 /* soguem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = soguem.ttf; path = ../../../../../Downloads/soguem.ttf; sourceTree = "<group>"; };
 		60394B7E296F9043007DAAA4 /* AcheiveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveListViewController.swift; sourceTree = "<group>"; };
+		60394B80296F9B03007DAAA4 /* AcheiveListHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveListHabitCell.swift; sourceTree = "<group>"; };
 		605516D0296B9E5200A2B87E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		605516D2296BA51500A2B87E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		6055BD33295D327000EC4791 /* habit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = habit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 				609CD2EB2967AFA300953336 /* HabitCell.swift */,
 				605516D0296B9E5200A2B87E /* ColorCell.swift */,
 				60394B79296E9DF3007DAAA4 /* AcheiveCell.swift */,
+				60394B80296F9B03007DAAA4 /* AcheiveListHabitCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60394B7F296F9043007DAAA4 /* AcheiveListViewController.swift in Sources */,
+				60394B81296F9B03007DAAA4 /* AcheiveListHabitCell.swift in Sources */,
 				6055BD63295D787800EC4791 /* DetailViewController.swift in Sources */,
 				60AF535E296BFD7C005B8F1B /* Constant.swift in Sources */,
 				6055BD3B295D327000EC4791 /* ViewController.swift in Sources */,

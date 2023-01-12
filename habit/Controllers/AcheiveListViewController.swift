@@ -6,8 +6,6 @@ import StoreKit
 
 class AcheiveListViewController: UIViewController {
 
-    
-    @IBOutlet weak var collectionview: UICollectionView!
     // 코어데이터
     let coreDataManager = CoreDataManager.shared
     
@@ -50,7 +48,7 @@ class AcheiveListViewController: UIViewController {
     
     func setupNaviBar() {
 
-        self.title = "완성 잔디 목록"
+        self.title = "완료한 잔디 목록"
 //         네비게이션바 타이틀 크게
         navigationController?.navigationBar.prefersLargeTitles = true
         // 네비게이션바 타이틀 중앙
@@ -115,12 +113,12 @@ extension AcheiveListViewController: UICollectionViewDelegate {
         let vc1StoryboardID = String(describing: DetailViewController.self)
         let vc1 = storyboard.instantiateViewController(identifier: vc1StoryboardID) as! DetailViewController
         vc1.title = ""
-        vc1.habit = coreDataManager.getHabitList()[indexPath.row]
+        vc1.habit = coreDataManager.getAcheivedHabitList()[indexPath.row]
 
         // acheive detail
         let vc2StoryboardID = String(describing: AcheiveDetailController.self)
         let vc2 = storyboard.instantiateViewController(identifier: vc2StoryboardID) as! AcheiveDetailController
-        vc2.habit = coreDataManager.getHabitList()[indexPath.row]
+        vc2.habit = coreDataManager.getAcheivedHabitList()[indexPath.row]
 
 
         let tabVC = UITabBarController()
@@ -162,7 +160,7 @@ extension AcheiveListViewController: UICollectionViewDelegate {
                    // alert
                    let alert = UIAlertController(title: "정말 삭제하시겠습니까?", message: nil, preferredStyle: .alert)
                    let confirm = UIAlertAction(title: "확인", style: .default) { (_) in
-                          let habit = self.coreDataManager.getHabitList()[indexPath.row]
+                          let habit = self.coreDataManager.getAcheivedHabitList()[indexPath.row]
                           self.coreDataManager.deleteData(data: habit, completion: {
                               self.collectionView.reloadData()
                           })
@@ -185,17 +183,17 @@ extension AcheiveListViewController: UICollectionViewDataSource {
     
     // 각 섹션에 들어가는 아이템 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return coreDataManager.getHabitList().count
+        return coreDataManager.getAcheivedHabitList().count
     }
     
     // 각 콜렉션뷰셀에대한 설정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cellId = String(describing: HabitCell.self)
+        let cellId = String(describing: AcheiveListHabitCell.self)
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HabitCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AcheiveListHabitCell
         // 셀에 모델(ToDoData) 전달
-        let habitData = coreDataManager.getHabitList()
+        let habitData = coreDataManager.getAcheivedHabitList()
         cell.data = habitData[indexPath.row]
         
         return cell

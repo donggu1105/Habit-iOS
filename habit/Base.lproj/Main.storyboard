@@ -441,13 +441,53 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HabitCell" id="I1U-if-t3n" customClass="HabitCell" customModule="habit" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AcheiveListHabitCell" id="khQ-Ls-zZu" customClass="AcheiveListHabitCell" customModule="habit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="196"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rCy-61-P9L">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vVd-hz-hff">
+                                            <rect key="frame" x="0.0" y="0.0" width="184" height="196"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOg-sZ-4zs" customClass="PContributionsView" customModule="PContributionsView">
+                                                    <rect key="frame" x="5" y="5" width="174" height="115"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="115" id="lsQ-DG-Pia"/>
+                                                    </constraints>
+                                                </view>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cbU-iF-3vA">
+                                                    <rect key="frame" x="5" y="135" width="41.333333333333336" height="51"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXL-C1-lgX">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="18"/>
+                                                            <fontDescription key="fontDescription" name="-Medium" family="꽃소금체" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zF-vq-gX3">
+                                                            <rect key="frame" x="0.0" y="33" width="36.666666666666664" height="18"/>
+                                                            <fontDescription key="fontDescription" name="-Medium" family="꽃소금체" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="BOg-sZ-4zs" firstAttribute="top" secondItem="vVd-hz-hff" secondAttribute="top" constant="5" id="23Y-pS-cff"/>
+                                                <constraint firstItem="cbU-iF-3vA" firstAttribute="leading" secondItem="BOg-sZ-4zs" secondAttribute="leading" id="AhY-md-q9s"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cbU-iF-3vA" secondAttribute="bottom" constant="10" id="frk-v1-Sbh"/>
+                                                <constraint firstItem="BOg-sZ-4zs" firstAttribute="leading" secondItem="vVd-hz-hff" secondAttribute="leading" constant="5" id="gk0-6E-OT9"/>
+                                                <constraint firstAttribute="trailing" secondItem="BOg-sZ-4zs" secondAttribute="trailing" constant="5" id="yI4-JH-jTw"/>
+                                                <constraint firstItem="cbU-iF-3vA" firstAttribute="top" secondItem="BOg-sZ-4zs" secondAttribute="bottom" constant="15" id="zBd-Qj-B67"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
+                                        <size key="customSize" width="184" height="196"/>
+                                        <connections>
+                                            <outlet property="contributionView" destination="BOg-sZ-4zs" id="BiR-Ga-9su"/>
+                                            <outlet property="goalTitleLabel" destination="5zF-vq-gX3" id="HxY-16-gFS"/>
+                                            <outlet property="nameLabel" destination="IXL-C1-lgX" id="IJm-XT-ej0"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

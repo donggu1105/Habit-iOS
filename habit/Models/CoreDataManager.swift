@@ -47,6 +47,31 @@ final class CoreDataManager {
         return habits
     }
     
+    // MARK: - [Read] 코어데이터에 저장된 데이터 모두 읽어오기
+    func getAcheivedHabitList() -> [Habit] {
+        var habits: [Habit] = []
+        // 임시저장소 있는지 확인
+        if let context = context {
+            // 요청서
+            let request = NSFetchRequest<NSManagedObject>(entityName: Entity.habit)
+            request.predicate = NSPredicate(format: "isAcheived = %d", true as CVarArg)
+
+            // 정렬순서를 정해서 요청서에 넘겨주기
+            let dateOrder = NSSortDescriptor(key: "createdDate", ascending: false)
+            request.sortDescriptors = [dateOrder]
+            
+            do {
+                // 임시저장소에서 (요청서를 통해서) 데이터 가져오기 (fetch메서드)
+                if let fetchedList = try context.fetch(request) as? [Habit] {
+                    habits = fetchedList
+                }
+            } catch {
+                print("가져오는 것 실패")
+            }
+        }
+        return habits
+    }
+    
     // MARK: - [Create] 코어데이터에 데이터 생성하기
     func saveData(name:String?, goalTitle: String?, goalCount: Int64, color: Int64, achieveCount: Int64, completion: @escaping () -> Void) {
         // 임시저장소 있는지 확인

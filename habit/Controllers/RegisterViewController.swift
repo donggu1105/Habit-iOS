@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
     
     // ToDo 색깔 구분을 위해 임시적으로 숫자저장하는 변수
     // (나중에 어떤 색상이 선택되어 있는지 쉽게 파악하기 위해)
-    var temporaryNum: Int64? = 0
+    var temporaryNum: Int64? = 999
  
     
     var habit: Habit? {
@@ -96,8 +96,8 @@ class RegisterViewController: UIViewController {
             registerButton.setTitle("잔디 만들기", for: .normal)
             nameTextField.placeholder = "잔디 이름"
             goalTextField.placeholder = "목표"
-            grassImage.tintColor = MyColor.main.backgoundColor
-            grassLabel.textColor = MyColor.main.backgoundColor
+            grassImage.tintColor = MyColor.defaultColor.backgoundColor
+            grassLabel.textColor = MyColor.defaultColor.backgoundColor
         }
     }
     
@@ -118,7 +118,7 @@ class RegisterViewController: UIViewController {
             // 텍스트뷰에 저장되어 있는 메세지
             habit.name = nameTextField.text
             habit.goalTitle = goalTextField.text
-            habit.color = temporaryNum ?? 0
+            habit.color = temporaryNum ?? 999
             coreDataManager.updateData(newData: habit, completion: {
                 print("업데이트 완료")
                 self.navigationController?.popViewController(animated: true)
@@ -127,7 +127,7 @@ class RegisterViewController: UIViewController {
             coreDataManager.saveData(name: nameTextField.text,
                                      goalTitle: goalTextField.text,
                                      goalCount: Int64(ContributionHelper.goalCount),
-                                     color: temporaryNum ?? 0,
+                                     color: temporaryNum ?? 999,
                                      achieveCount: 0) {
                 print("저장완료")
                 self.navigationController?.popViewController(animated: true)
