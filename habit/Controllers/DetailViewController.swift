@@ -75,10 +75,10 @@ class DetailViewController: UIViewController {
             circularProgressView.animate(Double(percent) / 100, duration: 1)
         }
         
-        if (coreDataManager.isCheckedToday(habit: habit)) {
-            acheiveButton.isEnabled = false
-            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
-        }
+//        if (coreDataManager.isCheckedToday(habit: habit)) {
+//            acheiveButton.isEnabled = false
+//            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
+//        }
         
         // 완성하기
         if (habit.acheiveCount == habit.goalCount) {
