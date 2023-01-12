@@ -80,6 +80,7 @@ class DetailViewController: UIViewController {
 //            acheiveButton.setTitle("오늘은 완료했어요!", for: .normal)
 //        }
         
+        // 완성하기
         if (habit.acheiveCount == habit.goalCount) {
             acheiveButton.setTitle("잔디 완성하기🪴", for: .normal)
         }
@@ -90,30 +91,32 @@ class DetailViewController: UIViewController {
     @IBAction func acheiveButtonTapped(_ sender: UIButton) {
         
         guard let habit = self.habit else {return}
-        habit.acheiveCount += 1
-        // 참고    https://github.com/huri000/SwiftEntryKit#dismissing-an-entry
-        // Generate top floating entry and set some properties
-        var attributes = EKAttributes.centerFloat
-        // 배경
-//        attributes.entryBackground = .color(color: .standardContent)
-        attributes.entryBackground = .visualEffect(style: .dark)
-        attributes.screenBackground = .color(color: EKColor(UIColor(white: 0.5, alpha: 0.5)))
-        // 지속시간
-        attributes.displayDuration = .infinity
-        // 디스미스 시키기
-        attributes.entryInteraction = .dismiss
-        attributes.screenInteraction = .forward
-        // 키보드 관련
-        let offset = EKAttributes.PositionConstraints.KeyboardRelation.Offset(bottom: 10, screenEdgeResistance: 20)
-        let keyboardRelation = EKAttributes.PositionConstraints.KeyboardRelation.bind(offset: offset)
-        attributes.positionConstraints.keyboardRelation = keyboardRelation
-//        attributes.entryBackground = .gradient(gradient: .init(colors: [EKColor(.red), EKColor(.green)], startPoint: .zero, endPoint: CGPoint(x: 1, y: 1)))
-        attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
-
-        self.showSignupForm(attributes: &attributes, style: .metallic, habit: habit)
-
-//        self.navigationController?.popViewController(animated: true)
-
+        
+        // 잔디 완성하기일때
+        if (habit.acheiveCount == habit.goalCount) {
+            habit.isAcheived = true
+            self.coreDataManager.updateData(newData: habit) {
+                print("habit 업데이트 완료")
+                self.navigationController?.popViewController(animated: true)
+            }
+        } else {
+            habit.acheiveCount += 1
+            var attributes = EKAttributes.centerFloat
+            // 배경
+            attributes.entryBackground = .visualEffect(style: .dark)
+            attributes.screenBackground = .color(color: EKColor(UIColor(white: 0.5, alpha: 0.5)))
+            // 지속시간
+            attributes.displayDuration = .infinity
+            // 디스미스 시키기
+            attributes.entryInteraction = .dismiss
+            attributes.screenInteraction = .forward
+            // 키보드 관련
+            let offset = EKAttributes.PositionConstraints.KeyboardRelation.Offset(bottom: 10, screenEdgeResistance: 20)
+            let keyboardRelation = EKAttributes.PositionConstraints.KeyboardRelation.bind(offset: offset)
+            attributes.positionConstraints.keyboardRelation = keyboardRelation
+            attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
+            self.showSignupForm(attributes: &attributes, style: .metallic, habit: habit)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

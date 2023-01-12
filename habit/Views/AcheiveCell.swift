@@ -21,7 +21,10 @@ final class AcheiveCell: UICollectionViewCell {
 //        self.contentView.layer.borderColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         self.contentView.layer.cornerRadius = 8
         self.contentView.layer.borderWidth = 1
-        createdDateLabel.text = data?.createdDateStr
+        
+        if let createdDate = data?.createdDateStr {
+            createdDateLabel.text = "\(createdDate)"
+        }
         memoLabel.text = data?.memo
     }
   

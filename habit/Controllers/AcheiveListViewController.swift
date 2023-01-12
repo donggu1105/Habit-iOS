@@ -3,16 +3,16 @@
 
 import UIKit
 import StoreKit
-import JJFloatingActionButton
 
-class ViewController: UIViewController {
+class AcheiveListViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var collectionview: UICollectionView!
     // 코어데이터
     let coreDataManager = CoreDataManager.shared
     
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     
     // 화면에 다시 진입할때마다 테이블뷰 리로드
     override func viewWillAppear(_ animated: Bool) {
@@ -32,31 +32,9 @@ class ViewController: UIViewController {
         setUpCollectionView()
         // 롱프레스 버튼 셋업
 //        setupLongGestureRecognizerOnCollection()
-        // 플로팅 버튼 셋업
-        setUpFloatingButton()
         
         
     }
-    
-    func setUpFloatingButton() {
-        let actionButton = JJFloatingActionButton()
-
-        actionButton.addItem(title: "잔디 등록하기", image: UIImage(systemName: "pencil.tip.crop.circle.badge.plus")?.withRenderingMode(.alwaysTemplate)) { item in
-            self.performSegue(withIdentifier: "register", sender: nil)
-        }
-        
-//        actionButton.addItem(title: "잔디 등록 팁", image: UIImage(systemName: "list.clipboard.fill")?.withRenderingMode(.alwaysTemplate)) { item in
-//            self.performSegue(withIdentifier: "tip", sender: nil)
-//        }
-        
-        actionButton.addItem(title: "별점 남기기", image: UIImage(systemName: "paperplane.fill")?.withRenderingMode(.alwaysTemplate)) { item in
-            SKStoreReviewController.requestReviewInCurrentScene()
-        }
-
-         actionButton.display(inViewController: self)
-    }
-    
-
     
     
     func setUpCollectionView() {
@@ -72,33 +50,18 @@ class ViewController: UIViewController {
     
     func setupNaviBar() {
 
-        self.title = "잔디 목록"
+        self.title = "완성 잔디 목록"
 //         네비게이션바 타이틀 크게
         navigationController?.navigationBar.prefersLargeTitles = true
         // 네비게이션바 타이틀 중앙
 //        navigationItem.largeTitleDisplayMode = .never
 
 //      네비게이션바 우측에 Plus 버튼 만들기
-        let acheiveListShowbutton = UIBarButtonItem(image: UIImage(systemName: "laurel.trailing"), style: .plain, target: self, action: #selector(acheiveListShowButtonTapped))
-        self.navigationItem.rightBarButtonItem = acheiveListShowbutton
         
-    }
-    @objc func acheiveListShowButtonTapped() {
-        let vcIdentifier = String(describing: AcheiveListViewController.self)
-        performSegue(withIdentifier: vcIdentifier, sender: nil)
-    }
-    
-    // (세그웨이를 실행할때) 실제 데이터 전달 (ToDoData전달)
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "register" {
-            let registerVC = segue.destination as! RegisterViewController
-            guard let indexPath = sender as? IndexPath else { return }
-            registerVC.habit = coreDataManager.getHabitList()[indexPath.row]
-        }
     }
 }
 
-extension ViewController {
+extension AcheiveListViewController {
     
     // 콤포지셔널 레이아웃 설정
     fileprivate func createCompositionalLayout() -> UICollectionViewLayout {
@@ -142,7 +105,7 @@ extension ViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension AcheiveListViewController: UICollectionViewDelegate {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -218,7 +181,7 @@ extension ViewController: UICollectionViewDelegate {
     
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension AcheiveListViewController: UICollectionViewDataSource {
     
     // 각 섹션에 들어가는 아이템 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
