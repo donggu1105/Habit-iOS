@@ -5,6 +5,7 @@ import UIKit
 import StoreKit
 import JJFloatingActionButton
 
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -12,13 +13,18 @@ class ViewController: UIViewController {
     // 코어데이터
     let coreDataManager = CoreDataManager.shared
     
+    var habit: [Habit] = []
+    
 
     
     // 화면에 다시 진입할때마다 테이블뷰 리로드
     override func viewWillAppear(_ animated: Bool) {
         print(#function)
         super.viewWillAppear(animated)
-        collectionView.reloadData()
+        habit = coreDataManager.getHabitList()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.collectionView.reloadData()
+        }
     }
 
     
@@ -30,8 +36,6 @@ class ViewController: UIViewController {
         setupNaviBar()
         // 콜렉션뷰 셋업
         setUpCollectionView()
-        // 롱프레스 버튼 셋업
-//        setupLongGestureRecognizerOnCollection()
         // 플로팅 버튼 셋업
         setUpFloatingButton()
         
@@ -93,7 +97,7 @@ class ViewController: UIViewController {
         if segue.identifier == "register" {
             let registerVC = segue.destination as! RegisterViewController
             guard let indexPath = sender as? IndexPath else { return }
-            registerVC.habit = coreDataManager.getHabitList()[indexPath.row]
+            registerVC.habit = habit[indexPath.row]
         }
     }
 }
@@ -152,12 +156,12 @@ extension ViewController: UICollectionViewDelegate {
         let vc1StoryboardID = String(describing: DetailViewController.self)
         let vc1 = storyboard.instantiateViewController(identifier: vc1StoryboardID) as! DetailViewController
         vc1.title = ""
-        vc1.habit = coreDataManager.getHabitList()[indexPath.row]
+        vc1.habit = habit[indexPath.row]
 
         // acheive detail
         let vc2StoryboardID = String(describing: AcheiveDetailController.self)
         let vc2 = storyboard.instantiateViewController(identifier: vc2StoryboardID) as! AcheiveDetailController
-        vc2.habit = coreDataManager.getHabitList()[indexPath.row]
+        vc2.habit = habit[indexPath.row]
 
 
         let tabVC = UITabBarController()
@@ -199,7 +203,8 @@ extension ViewController: UICollectionViewDelegate {
                    // alert
                    let alert = UIAlertController(title: "정말 삭제하시겠습니까?", message: nil, preferredStyle: .alert)
                    let confirm = UIAlertAction(title: "확인", style: .default) { (_) in
-                          let habit = self.coreDataManager.getHabitList()[indexPath.row]
+                          let habit = self.habit[indexPath.row]
+                          self.habit.remove(at: indexPath.row)
                           self.coreDataManager.deleteData(data: habit, completion: {
                               self.collectionView.reloadData()
                           })
@@ -222,7 +227,7 @@ extension ViewController: UICollectionViewDataSource {
     
     // 각 섹션에 들어가는 아이템 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return coreDataManager.getHabitList().count
+        return habit.count
     }
     
     // 각 콜렉션뷰셀에대한 설정
@@ -232,8 +237,7 @@ extension ViewController: UICollectionViewDataSource {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! HabitCell
         // 셀에 모델(ToDoData) 전달
-        let habitData = coreDataManager.getHabitList()
-        cell.data = habitData[indexPath.row]
+        cell.configureUIwithData(habit: habit[indexPath.row])
         
         return cell
     }

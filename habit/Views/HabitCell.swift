@@ -17,12 +17,7 @@ final class HabitCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalTitleLabel: UILabel!
     
-    var data: Habit? {
-        didSet {
-            configureUIwithData()
-        }
-    }
-    
+
     // 지우기
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,34 +40,33 @@ final class HabitCell: UICollectionViewCell {
         contributionView.cellCornerRadius(2)
         contributionView.spacing = 3
 
-//        contributionView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
 
         
     }
 
     
     // 데이터를 가지고 적절한 UI 표시하기
-    func configureUIwithData() {
+    func configureUIwithData(habit: Habit) {
         print(#function)
         // 잔디 이름
-        nameLabel.text = data?.name
+        nameLabel.text = habit.name
         // 목표
-        goalTitleLabel.text = data?.goalTitle
+        goalTitleLabel.text = habit.goalTitle
 
-        guard let colorNum = data?.color else {return}
-        if let color = MyColor(rawValue: colorNum) {
-            contentView.backgroundColor = color.backgoundColor
-            contributionView.backgroundColor = color.backgoundColor
-        }
+        let colorNum = habit.color
+        contentView.backgroundColor = MyColor(rawValue: colorNum)!.backgoundColor
+        contributionView.backgroundColor = MyColor(rawValue: colorNum)!.backgoundColor
+        
         // 잔디 색칠하기
-        if let acheiveCount: Int64 = data?.acheiveCount {
-            print("acheiveCnt: \(acheiveCount)")
-            let dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(acheiveCount))
-            //            print(dataSquare)
-            contributionView.contrilbutionsData = dataSquare
+        print("acheiveCnt: \(habit.acheiveCount)")
+        var dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(habit.acheiveCount))
+        contributionView.contrilbutionsData = dataSquare
+        print("dataSquare: \(dataSquare)")
+        
+        self.layoutIfNeeded()
+        
         }
-
-    }
-  
+    
+        
 
 }

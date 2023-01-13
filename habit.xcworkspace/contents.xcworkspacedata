@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Acheive+CoreDataClass.swift">
-   </FileRef>
-   <FileRef
-      location = "group:Acheive+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:habit.xcodeproj">
    </FileRef>
    <FileRef
