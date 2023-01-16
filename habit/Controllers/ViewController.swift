@@ -81,7 +81,7 @@ class ViewController: UIViewController {
 //        navigationItem.largeTitleDisplayMode = .never
 
 //      네비게이션바 우측에 Plus 버튼 만들기
-        let acheiveListShowbutton = UIBarButtonItem(image: UIImage(systemName: "laurel.trailing"), style: .plain, target: self, action: #selector(acheiveListShowButtonTapped))
+        let acheiveListShowbutton = UIBarButtonItem(image: UIImage(systemName: "square.grid.3x3.fill"), style: .plain, target: self, action: #selector(acheiveListShowButtonTapped))
         self.navigationItem.rightBarButtonItem = acheiveListShowbutton
         
     }
