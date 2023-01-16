@@ -81,12 +81,10 @@ class DetailViewController: UIViewController {
         contributionView.contrilbutionsData = dataSquare
         print("dataSquare: \(dataSquare)")
 
-        self.navigationController?.popViewController(animated: true)
-        if (coreDataManager.isCheckedToday(habit: habit)) {
-            acheiveButton.isEnabled = false
-            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
-        }
-        
+//        if (coreDataManager.isCheckedToday(habit: habit)) {
+//            acheiveButton.isEnabled = false
+//            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
+//        }
         
         // 완성하기
         if (habit.acheiveCount == habit.goalCount && habit.isAcheived == false) {
@@ -129,6 +127,8 @@ class DetailViewController: UIViewController {
             attributes.positionConstraints.keyboardRelation = keyboardRelation
             attributes.popBehavior = .animated(animation: .init(translate: .init(duration: 0.3), scale: .init(from: 1, to: 0.7, duration: 0.7)))
             self.showSignupForm(attributes: &attributes, style: .metallic, habit: habit)
+            
+
         }
     }
     
@@ -174,14 +174,13 @@ extension DetailViewController {
         }
         
         attributes.lifecycleEvents.willDisappear = {
-            print()
             self.coreDataManager.updateData(newData: habit) {
                 print("habit 업데이트 완료")
             }
             self.coreDataManager.saveAcheiveData(habit: habit, memo: contentView.getText(with: 0)) {
                 print("acheive 업데이트 완료")
             }
-            self.configureWithUI()
+            self.navigationController?.popViewController(animated: true)
             
         }
         SwiftEntryKit.display(entry: contentView, using: attributes, presentInsideKeyWindow: true)
