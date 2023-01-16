@@ -1,8 +1,8 @@
 
 final class ContributionHelper {
     
-    private static let row: Int = 5
-    private static let col: Int = 8
+    private static let row: Int = 2
+    private static let col: Int = 20
     public static let goalCount: Int = {
         let goalCount = ContributionHelper.row * ContributionHelper.col
         return goalCount
@@ -31,21 +31,10 @@ final class ContributionHelper {
         
         let y = acheiveCount / ContributionHelper.col // 몫
         let x = acheiveCount % ContributionHelper.col // 나머지
-        
-        
-        if (y >= ContributionHelper.col) { return
-            [
-                [3,3,3,3,3,3,3,3],
-                [3,3,3,3,3,3,3,3],
-                [3,3,3,3,3,3,3,3],
-                [3,3,3,3,3,3,3,3],
-                [3,3,3,3,3,3,3,3]
-            ]
-            
-        }
+
         
         for row in 0..<y {
-            dataSquare[row] = [3,3,3,3,3,3,3,3]
+            dataSquare[row] = [3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3]
         }
         
         for col in 0..<x {

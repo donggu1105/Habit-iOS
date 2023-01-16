@@ -22,9 +22,7 @@ class ViewController: UIViewController {
         print(#function)
         super.viewWillAppear(animated)
         habit = coreDataManager.getHabitList()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.collectionView.reloadData()
-        }
+        collectionView.reloadData()
     }
 
     

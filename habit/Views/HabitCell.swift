@@ -12,8 +12,8 @@ import PContributionsView
 
 final class HabitCell: UICollectionViewCell {
 
-    @IBOutlet weak var contributionView: PContributionsView!
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var goalTitleLabel: UILabel!
     
@@ -34,11 +34,12 @@ final class HabitCell: UICollectionViewCell {
         self.contentView.layer.borderWidth = 1
         
         // 컨트리뷰션 뷰 셋업
-        contributionView.clipsToBounds = true
-        contributionView.backgroundColor = UIColor(hexString: "14171e")
-        contributionView.layer.cornerRadius = 10
-        contributionView.cellCornerRadius(2)
-        contributionView.spacing = 3
+
+//        contributionView.clipsToBounds = true
+//        contributionView.backgroundColor = UIColor(hexString: "14171e")
+//        contributionView.layer.cornerRadius = 10
+//        contributionView.cellCornerRadius(2)
+//        contributionView.spacing = 3
 
 
         
@@ -55,18 +56,18 @@ final class HabitCell: UICollectionViewCell {
 
         let colorNum = habit.color
         contentView.backgroundColor = MyColor(rawValue: colorNum)!.backgoundColor
-        contributionView.backgroundColor = MyColor(rawValue: colorNum)!.backgoundColor
         
-        // 잔디 색칠하기
-        print("acheiveCnt: \(habit.acheiveCount)")
-        var dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(habit.acheiveCount))
-        contributionView.contrilbutionsData = dataSquare
-        print("dataSquare: \(dataSquare)")
-        
-        self.layoutIfNeeded()
-        
+        if let percent = habit.percent {
+            switch percent {
+            case 0: imageView.image = UIImage(named: "level0")
+            case 1...10: imageView.image = UIImage(named: "level1")
+            case 11...20: imageView.image = UIImage(named: "level2")
+            case 21...30: imageView.image = UIImage(named: "level3")
+            case 31...50: imageView.image = UIImage(named: "level4")
+            case 51...80: imageView.image = UIImage(named: "level5")
+            case 80...100: imageView.image = UIImage(named: "level6")
+            default: imageView.image = UIImage(named: "level0")
+            }
         }
-    
-        
-
+    }
 }

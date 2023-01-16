@@ -13,6 +13,7 @@ public struct Entity {
     static let acheive: String = "Acheive"
 }
 
+
 public class CheerUp {
     
     public static func ment(percent: Int) -> String {

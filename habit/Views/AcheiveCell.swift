@@ -25,6 +25,8 @@ final class AcheiveCell: UICollectionViewCell {
         if let createdDate = data?.createdDateStr {
             createdDateLabel.text = "\(createdDate)"
         }
+        
+        
         memoLabel.text = data?.memo
     }
   

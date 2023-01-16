@@ -14,8 +14,8 @@
             filePath = "habit/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "setupNaviBar()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "habit/Controllers/DetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "showSignupForm(attributes:style:habit:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA715970-9F81-4903-BBE5-00F4302C8A79"
-            shouldBeEnabled = "No"
+            uuid = "A434E165-FA0C-43BB-9A67-533D8D96C759"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "habit/Views/HabitCell.swift"
+            filePath = "habit/Models/DataBaseManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "configureUIwithData(habit:)"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "updateAcheiveCount(data:acheiveCount:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

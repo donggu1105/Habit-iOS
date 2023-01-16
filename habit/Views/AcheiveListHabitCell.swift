@@ -6,13 +6,12 @@
 //
 
 import UIKit
-import PContributionsView
 
 
 
 final class AcheiveListHabitCell: UICollectionViewCell {
 
-    @IBOutlet weak var contributionView: PContributionsView!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var goalTitleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -38,11 +37,11 @@ final class AcheiveListHabitCell: UICollectionViewCell {
         self.contentView.layer.borderWidth = 1
         
         // 컨트리뷰션 뷰 셋업
-        contributionView.clipsToBounds = true
-        contributionView.backgroundColor = UIColor(hexString: "14171e")
-        contributionView.layer.cornerRadius = 10
-        contributionView.cellCornerRadius(2)
-        contributionView.spacing = 3
+//        contributionView.clipsToBounds = true
+//        contributionView.backgroundColor = UIColor(hexString: "14171e")
+//        contributionView.layer.cornerRadius = 10
+//        contributionView.cellCornerRadius(2)
+//        contributionView.spacing = 3
 
 //        contributionView.userCustomColor(ColorMap("#F4F4F4", "#72FFFF", "#00D7FF", "#0096FF", "#5800FF"))
 
@@ -61,15 +60,22 @@ final class AcheiveListHabitCell: UICollectionViewCell {
         guard let colorNum = data?.color else {return}
         if let color = MyColor(rawValue: colorNum) {
             contentView.backgroundColor = color.backgoundColor
-            contributionView.backgroundColor = color.backgoundColor
+//            contributionView.backgroundColor = color.backgoundColor
         }
-        // 잔디 색칠하기
-        if let acheiveCount: Int64 = data?.acheiveCount {
-            print("acheiveCnt: \(acheiveCount)")
-            let dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(acheiveCount))
-            //            print(dataSquare)
-            contributionView.contrilbutionsData = dataSquare
+        
+        if let percent = data?.percent {
+            switch percent {
+            case 0: imageView.image = UIImage(named: "level0")
+            case 1...10: imageView.image = UIImage(named: "level1")
+            case 11...20: imageView.image = UIImage(named: "level2")
+            case 21...30: imageView.image = UIImage(named: "level3")
+            case 31...50: imageView.image = UIImage(named: "level4")
+            case 51...80: imageView.image = UIImage(named: "level5")
+            case 80...100: imageView.image = UIImage(named: "level6")
+            default: imageView.image = UIImage(named: "level0")
+            }
         }
+
 
     }
   

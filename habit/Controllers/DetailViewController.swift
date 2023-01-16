@@ -7,16 +7,16 @@
 
 import UIKit
 import SwiftEntryKit
-
+import PContributionsView
 class DetailViewController: UIViewController {
 
     
+    @IBOutlet weak var contributionBackgroundView: UIView!
     let coreDataManager = CoreDataManager.shared
     
+    @IBOutlet weak var contributionView: PContributionsView!
     var habit: Habit?
     
-    @IBOutlet weak var goalTitleLabel: UILabel!
-    @IBOutlet weak var cheerView: UIView!
     @IBOutlet weak var cheerLabel: UILabel!
     
     @IBOutlet weak var createdDateLabel: UILabel!
@@ -35,11 +35,16 @@ class DetailViewController: UIViewController {
     
     func setUp() {
         self.view.backgroundColor = .black
-        // goalTitle
-        // cheer
-        cheerView.backgroundColor = UIColor(hexString: "14171e")
-        cheerView.clipsToBounds = true
-        cheerView.layer.cornerRadius = 8
+        // 컨트리뷰션 백그라운드 뷰
+        contributionBackgroundView.backgroundColor = UIColor(hexString: "14171e")
+        contributionBackgroundView.clipsToBounds = true
+        contributionBackgroundView.layer.cornerRadius = 8
+        // 컨트리뷰션 뷰
+        contributionView.backgroundColor = UIColor(hexString: "14171e")
+        contributionView.clipsToBounds = true
+        contributionView.layer.cornerRadius = 8
+        contributionView.cellCornerRadius(2)
+        contributionView.spacing = 3
         // graph
         graphBackgroundView.backgroundColor = UIColor(hexString: "14171e")
         graphBackgroundView.clipsToBounds = true
@@ -60,12 +65,7 @@ class DetailViewController: UIViewController {
     func configureWithUI() {
         guard let habit = self.habit else {return}
         
-        goalTitleLabel.text = "목표: \(habit.goalTitle!)"
         acheiveCountLabel.text = "습관 완료 : \(habit.acheiveCount)회"
-        
-        if let createdDate = habit.createdDateStr {
-            createdDateLabel.text = createdDate + "~"
-        }
         
         if let percent = habit.percent {
             cheerLabel.text = CheerUp.ment(percent: Int(percent))
@@ -75,14 +75,26 @@ class DetailViewController: UIViewController {
             circularProgressView.animate(Double(percent) / 100, duration: 1)
         }
         
-//        if (coreDataManager.isCheckedToday(habit: habit)) {
-//            acheiveButton.isEnabled = false
-//            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
-//        }
+        // 잔디 색칠하기
+        print("acheiveCnt: \(habit.acheiveCount)")
+        var dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(habit.acheiveCount))
+        contributionView.contrilbutionsData = dataSquare
+        print("dataSquare: \(dataSquare)")
+
+        self.navigationController?.popViewController(animated: true)
+        if (coreDataManager.isCheckedToday(habit: habit)) {
+            acheiveButton.isEnabled = false
+            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
+        }
+        
         
         // 완성하기
-        if (habit.acheiveCount == habit.goalCount) {
+        if (habit.acheiveCount == habit.goalCount && habit.isAcheived == false) {
             acheiveButton.setTitle("잔디 완성하기🪴", for: .normal)
+        } else if (habit.acheiveCount == habit.goalCount && habit.isAcheived == true) {
+            acheiveButton.setTitle("잔디를 이미 완성했습니다.🪴", for: .normal)
+            acheiveButton.isEnabled = false
+
         }
 
 
@@ -99,6 +111,7 @@ class DetailViewController: UIViewController {
                 print("habit 업데이트 완료")
                 self.navigationController?.popViewController(animated: true)
             }
+
         } else {
             habit.acheiveCount += 1
             var attributes = EKAttributes.centerFloat
