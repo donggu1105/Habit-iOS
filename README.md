@@ -12,6 +12,7 @@
 # 사용한 기술
 
 <ul>
-  <li>swift</li>
+  <li>Swift</li>
   <li>UIKit</li>
+  <li>CoreData</li>
 </ul>
