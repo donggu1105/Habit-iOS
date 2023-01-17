@@ -6,3 +6,4 @@
 (app store download link)
 ```
 
+<img src="https://user-images.githubusercontent.com/48783799/212838253-88c54a17-2708-4a46-b43c-832a70006997.png">
