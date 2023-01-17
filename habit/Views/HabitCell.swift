@@ -14,10 +14,10 @@ final class HabitCell: UICollectionViewCell {
 
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var goalTitleLabel: UILabel!
-    
 
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var acheiveCountLabel: UILabel!
     // 지우기
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,8 +52,8 @@ final class HabitCell: UICollectionViewCell {
         // 잔디 이름
         nameLabel.text = habit.name
         // 목표
-        goalTitleLabel.text = habit.goalTitle
-
+        acheiveCountLabel.text = "\(habit.acheiveCount)회"
+        
         let colorNum = habit.color
         contentView.backgroundColor = MyColor(rawValue: colorNum)!.backgoundColor
         

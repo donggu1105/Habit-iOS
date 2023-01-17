@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
         // 버튼
         acheiveButton.clipsToBounds = true
         acheiveButton.layer.cornerRadius = 8
-        acheiveButton.setTitle("잔디 심기 🌱", for: .normal)
+        acheiveButton.setTitle("오늘의 잔디 심기 🌱", for: .normal)
         acheiveButton.backgroundColor = UIColor(hexString: "14171e")
         
     }
@@ -81,10 +81,10 @@ class DetailViewController: UIViewController {
         contributionView.contrilbutionsData = dataSquare
         print("dataSquare: \(dataSquare)")
 
-//        if (coreDataManager.isCheckedToday(habit: habit)) {
-//            acheiveButton.isEnabled = false
-//            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
-//        }
+        if (coreDataManager.isCheckedToday(habit: habit)) {
+            acheiveButton.isEnabled = false
+            acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
+        }
         
         // 완성하기
         if (habit.acheiveCount == habit.goalCount && habit.isAcheived == false) {
