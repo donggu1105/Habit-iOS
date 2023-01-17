@@ -15,4 +15,5 @@
   <li>Swift</li>
   <li>UIKit</li>
   <li>CoreData</li>
+  <li>Pod (라이브러리 사용시 필요함)</li> 
 </ul>
