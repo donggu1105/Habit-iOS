@@ -64,6 +64,8 @@ class RegisterViewController: UIViewController {
         nameTextField.delegate = self
         nameTextField.clearButtonMode = .whileEditing
         nameTextField.backgroundColor = .white
+
+
         // 목표
         goalTextField.delegate = self
         goalTextField.clearButtonMode = .whileEditing
@@ -97,8 +99,10 @@ class RegisterViewController: UIViewController {
         } else {
             self.title = "새로운 잔디"
             registerButton.setTitle("잔디 만들기", for: .normal)
-            nameTextField.placeholder = "잔디 이름"
-            goalTextField.placeholder = "목표"
+//            nameTextField.placeholder = "잔디 이름"
+            nameTextField.attributedPlaceholder = NSAttributedString(string: "잔디 이름", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
+//            goalTextField.placeholder = "목표"
+            goalTextField.attributedPlaceholder = NSAttributedString(string: "목표", attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
             grassImage.tintColor = MyColor.defaultColor.backgoundColor
             grassLabel.textColor = MyColor.defaultColor.backgoundColor
         }

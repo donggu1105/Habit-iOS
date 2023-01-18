@@ -76,7 +76,6 @@ class ViewController: UIViewController {
 
         self.title = "잔디 목록"
 //        navigationController?.view.backgroundColor = .black
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemGreen]
         navigationController?.navigationBar.prefersLargeTitles = true
         // 네비게이션바 타이틀 중앙
 //        navigationItem.largeTitleDisplayMode = .never
