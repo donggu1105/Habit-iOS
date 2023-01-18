@@ -40,6 +40,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(hexString: "fefae0")
         setup()
         configureUI()
     }
@@ -50,9 +51,9 @@ class RegisterViewController: UIViewController {
         // 콜렉션뷰 설정
         colorCollectionView.delegate = self
         colorCollectionView.dataSource = self
-        colorCollectionView.backgroundColor = UIColor(hexString: "14171e")
+        colorCollectionView.backgroundColor = .white
         colorCollectionView.clipsToBounds = true
-        colorCollectionView.layer.cornerRadius = 2
+        colorCollectionView.layer.cornerRadius = 8
         colorCollectionView.isScrollEnabled = false
         colorCollectionView.collectionViewLayout = createCompositionalLayout()
         
@@ -62,15 +63,17 @@ class RegisterViewController: UIViewController {
         // 잔디 이름
         nameTextField.delegate = self
         nameTextField.clearButtonMode = .whileEditing
-        nameTextField.backgroundColor = UIColor(hexString: "14171e")
+        nameTextField.backgroundColor = .white
         // 목표
         goalTextField.delegate = self
         goalTextField.clearButtonMode = .whileEditing
-        goalTextField.backgroundColor = UIColor(hexString: "14171e")
+        goalTextField.backgroundColor = .white
         // 버튼
         registerButton.clipsToBounds = true
         registerButton.layer.cornerRadius = 8
-        registerButton.backgroundColor = UIColor(hexString: "14171e")
+        registerButton.backgroundColor = UIColor(hexString: "f6bd60")
+        registerButton.setTitleColor(.black, for: .normal)
+
         // 그래스 라벨
         grassLabel.text = "잔디 밭 색"
         grassLabel.textAlignment = .center

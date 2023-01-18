@@ -34,30 +34,31 @@ class DetailViewController: UIViewController {
     
     
     func setUp() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor(hexString: "fefae0")
         // 컨트리뷰션 백그라운드 뷰
-        contributionBackgroundView.backgroundColor = UIColor(hexString: "14171e")
+        contributionBackgroundView.backgroundColor = UIColor(hexString: "f6bd60")
         contributionBackgroundView.clipsToBounds = true
         contributionBackgroundView.layer.cornerRadius = 8
         // 컨트리뷰션 뷰
-        contributionView.backgroundColor = UIColor(hexString: "14171e")
+        contributionView.backgroundColor = UIColor(hexString: "f6bd60")
         contributionView.clipsToBounds = true
         contributionView.layer.cornerRadius = 8
         contributionView.cellCornerRadius(2)
         contributionView.spacing = 3
         // graph
-        graphBackgroundView.backgroundColor = UIColor(hexString: "14171e")
+        graphBackgroundView.backgroundColor = UIColor(hexString: "f6bd60")
         graphBackgroundView.clipsToBounds = true
         graphBackgroundView.layer.cornerRadius = 8
         // circularProgressView
-        circularProgressView.backgroundColor = UIColor(hexString: "14171e")
+        circularProgressView.backgroundColor = UIColor(hexString: "f6bd60")
 //        circularProgressView.setprogress(0.4, UIColor.blue, "13", "")
         circularProgressView.animate(0.9, duration: 2)
         // 버튼
         acheiveButton.clipsToBounds = true
         acheiveButton.layer.cornerRadius = 8
         acheiveButton.setTitle("오늘의 잔디 심기 🌱", for: .normal)
-        acheiveButton.backgroundColor = UIColor(hexString: "14171e")
+        acheiveButton.setTitleColor(.black, for: .normal)
+        acheiveButton.backgroundColor = UIColor(hexString: "f6bd60")
         
     }
  
@@ -76,16 +77,14 @@ class DetailViewController: UIViewController {
         }
         
         // 잔디 색칠하기
-        print("acheiveCnt: \(habit.acheiveCount)")
-        var dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(habit.acheiveCount))
+        let dataSquare = ContributionHelper.getDataSqureByAchieveCount(acheiveCount: Int(habit.acheiveCount))
         contributionView.contrilbutionsData = dataSquare
-        print("dataSquare: \(dataSquare)")
 
         if (coreDataManager.isCheckedToday(habit: habit)) {
             acheiveButton.isEnabled = false
             acheiveButton.setTitle("오늘은 완료했어요!🌱", for: .normal)
         }
-        
+
         // 완성하기
         if (habit.acheiveCount == habit.goalCount && habit.isAcheived == false) {
             acheiveButton.setTitle("잔디 완성하기🪴", for: .normal)
@@ -119,7 +118,7 @@ class DetailViewController: UIViewController {
             // 지속시간
             attributes.displayDuration = .infinity
             // 디스미스 시키기
-            attributes.entryInteraction = .dismiss
+            attributes.entryInteraction = .absorbTouches
             attributes.screenInteraction = .forward
             // 키보드 관련
             let offset = EKAttributes.PositionConstraints.KeyboardRelation.Offset(bottom: 10, screenEdgeResistance: 20)

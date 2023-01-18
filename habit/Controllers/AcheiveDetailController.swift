@@ -13,7 +13,7 @@ class AcheiveDetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor(hexString: "fefae0")
         // 콜렉션뷰 셋업
         setUpCollectionView()
         
@@ -26,7 +26,7 @@ class AcheiveDetailController: UIViewController {
     }
     
     func setUpCollectionView() {
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = UIColor(hexString: "fefae0")
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         // extension 설정
         collectionView.dataSource = self

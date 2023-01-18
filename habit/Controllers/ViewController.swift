@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor(hexString: "fefae0")
         
         // 네비게이션 셋업
         setupNaviBar()
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
     
     
     func setUpCollectionView() {
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = UIColor(hexString: "fefae0")
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         // extension 설정
         collectionView.dataSource = self
@@ -75,8 +75,8 @@ class ViewController: UIViewController {
     func setupNaviBar() {
 
         self.title = "잔디 목록"
-        navigationController?.view.backgroundColor = .black
-//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+//        navigationController?.view.backgroundColor = .black
+//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.systemGreen]
         navigationController?.navigationBar.prefersLargeTitles = true
         // 네비게이션바 타이틀 중앙
 //        navigationItem.largeTitleDisplayMode = .never
@@ -166,7 +166,7 @@ extension ViewController: UICollectionViewDelegate {
         let tabVC = UITabBarController()
         tabVC.setViewControllers([vc1,vc2], animated: false)
 //        tabVC.modalPresentationStyle = .fullScreen
-        tabVC.tabBar.backgroundColor = .black
+        tabVC.tabBar.backgroundColor = UIColor(hexString: "fefae0")
         
         // 탭바 이미지 설정 (이미지는 애플이 제공하는 것으로 사용)
         guard let items = tabVC.tabBar.items else { return }

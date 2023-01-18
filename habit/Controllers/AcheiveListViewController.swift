@@ -22,7 +22,7 @@ class AcheiveListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = UIColor(hexString: "fefae0")
         
         // 네비게이션 셋업
         setupNaviBar()
@@ -36,7 +36,7 @@ class AcheiveListViewController: UIViewController {
     
     
     func setUpCollectionView() {
-        collectionView.backgroundColor = .black
+        collectionView.backgroundColor = UIColor(hexString: "fefae0")
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         // extension 설정
         collectionView.dataSource = self
@@ -124,7 +124,7 @@ extension AcheiveListViewController: UICollectionViewDelegate {
         let tabVC = UITabBarController()
         tabVC.setViewControllers([vc1,vc2], animated: false)
 //        tabVC.modalPresentationStyle = .fullScreen
-        tabVC.tabBar.backgroundColor = .black
+        tabVC.tabBar.backgroundColor = UIColor(hexString: "fefae0")
         
         // 탭바 이미지 설정 (이미지는 애플이 제공하는 것으로 사용)
         guard let items = tabVC.tabBar.items else { return }

@@ -31,10 +31,10 @@ final class AcheiveListHabitCell: UICollectionViewCell {
         
         // 셀 모양 셋업
         self.contentView.clipsToBounds = true
-        self.contentView.backgroundColor = UIColor(hexString: "14171e")
+        self.contentView.backgroundColor = UIColor(hexString: "f6bd60")
 //        self.contentView.layer.borderColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         self.contentView.layer.cornerRadius = 8
-        self.contentView.layer.borderWidth = 1
+//        self.contentView.layer.borderWidth = 1
         
         // 컨트리뷰션 뷰 셋업
 //        contributionView.clipsToBounds = true
@@ -51,7 +51,6 @@ final class AcheiveListHabitCell: UICollectionViewCell {
     
     // 데이터를 가지고 적절한 UI 표시하기
     func configureUIwithData() {
-        print(#function)
         // 잔디 이름
         nameLabel.text = data?.name
         // 목표
