@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .black
+//        self.view.backgroundColor = .black
         
         // 네비게이션 셋업
         setupNaviBar()
@@ -75,7 +75,8 @@ class ViewController: UIViewController {
     func setupNaviBar() {
 
         self.title = "잔디 목록"
-//         네비게이션바 타이틀 크게
+        navigationController?.view.backgroundColor = .black
+//        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationController?.navigationBar.prefersLargeTitles = true
         // 네비게이션바 타이틀 중앙
 //        navigationItem.largeTitleDisplayMode = .never
