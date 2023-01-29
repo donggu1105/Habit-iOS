@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070E7B37297B469400423E29 /* soguem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 070E7B36297B469400423E29 /* soguem.ttf */; };
 		2EF6DC19EB9A086AE5D75F0D /* Pods_habit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7427A406C09971717B6C2CBB /* Pods_habit.framework */; };
 		60394B56296CFEEC007DAAA4 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B55296CFEEC007DAAA4 /* CircularProgressView.swift */; };
 		60394B64296E3633007DAAA4 /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */; };
@@ -18,7 +19,6 @@
 		60394B76296E7A9A007DAAA4 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B75296E7A9A007DAAA4 /* Font.swift */; };
 		60394B78296E7E88007DAAA4 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B77296E7E88007DAAA4 /* UIColor+Utils.swift */; };
 		60394B7A296E9DF3007DAAA4 /* AcheiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B79296E9DF3007DAAA4 /* AcheiveCell.swift */; };
-		60394B7D296F7F47007DAAA4 /* soguem.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60394B7C296F7F46007DAAA4 /* soguem.ttf */; };
 		60394B7F296F9043007DAAA4 /* AcheiveListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B7E296F9043007DAAA4 /* AcheiveListViewController.swift */; };
 		60394B81296F9B03007DAAA4 /* AcheiveListHabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60394B80296F9B03007DAAA4 /* AcheiveListHabitCell.swift */; };
 		605516D1296B9E5200A2B87E /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605516D0296B9E5200A2B87E /* ColorCell.swift */; };
@@ -42,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		070E7B36297B469400423E29 /* soguem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = soguem.ttf; sourceTree = "<group>"; };
 		60394B55296CFEEC007DAAA4 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		60394B5F296E3633007DAAA4 /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataProperties.swift"; path = "../Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		60394B61296E3633007DAAA4 /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Habit+CoreDataClass.swift"; path = "../Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -52,7 +53,6 @@
 		60394B75296E7A9A007DAAA4 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		60394B77296E7E88007DAAA4 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		60394B79296E9DF3007DAAA4 /* AcheiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveCell.swift; sourceTree = "<group>"; };
-		60394B7C296F7F46007DAAA4 /* soguem.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = soguem.ttf; path = ../../../../../Downloads/soguem.ttf; sourceTree = "<group>"; };
 		60394B7E296F9043007DAAA4 /* AcheiveListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveListViewController.swift; sourceTree = "<group>"; };
 		60394B80296F9B03007DAAA4 /* AcheiveListHabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcheiveListHabitCell.swift; sourceTree = "<group>"; };
 		605516D0296B9E5200A2B87E /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		60394B7B296F7F2C007DAAA4 /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				60394B7C296F7F46007DAAA4 /* soguem.ttf */,
+				070E7B36297B469400423E29 /* soguem.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -267,8 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6055BD46295D327200EC4791 /* LaunchScreen.storyboard in Resources */,
+				070E7B37297B469400423E29 /* soguem.ttf in Resources */,
 				6055BD43295D327200EC4791 /* Assets.xcassets in Resources */,
-				60394B7D296F7F47007DAAA4 /* soguem.ttf in Resources */,
 				6055BD3E295D327000EC4791 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,7 +497,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = PK26VJ57ZY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = habit/Info.plist;
@@ -512,7 +512,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.donggu.habit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -531,7 +531,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = PK26VJ57ZY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = habit/Info.plist;
@@ -546,7 +546,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.01;
 				PRODUCT_BUNDLE_IDENTIFIER = com.donggu.habit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

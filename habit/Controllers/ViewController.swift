@@ -4,16 +4,20 @@
 import UIKit
 import StoreKit
 import JJFloatingActionButton
+import GoogleMobileAds
 
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // 코어데이터
     let coreDataManager = CoreDataManager.shared
     
     var habit: [Habit] = []
+    
+    let adUnitId = "ca-app-pub-4535853189763743/9078247812"
     
 
     
@@ -36,10 +40,18 @@ class ViewController: UIViewController {
         setUpCollectionView()
         // 플로팅 버튼 셋업
         setUpFloatingButton()
+        // 배너 셋업
+        setUpBanner()
         
         
     }
-    
+    func setUpBanner() {
+        bannerView.adUnitID = adUnitId
+        bannerView.delegate = self
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
+    }
     func setUpFloatingButton() {
         let actionButton = JJFloatingActionButton()
 
@@ -243,4 +255,32 @@ extension ViewController: UICollectionViewDataSource {
 }
 
 
+extension ViewController: GADBannerViewDelegate {
+    
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+    }
 
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
+    
+    
+}
